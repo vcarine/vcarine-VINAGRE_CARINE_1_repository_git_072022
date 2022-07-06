@@ -1,9 +1,9 @@
-<?php ob_start(); ?>
 
-    <h1>Ma page d'accueil </h1>
+<?php ob_start();?>
 
+Ici, le contenu de la page d'accueil
 <?php
-    $content = ob_get_clean();
-    $titre
-    require "template.php";
+$content = ob_get_clean();
+$title = "La liste de mes articles";
+require "template.php";
 ?>

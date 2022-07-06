@@ -54,7 +54,8 @@
 </nav>
 
             <div class="container">
-                <?=$titre?>
+
+                <h1 class="rounded-pill border border-dark p-2 m-2 text-center text-white bg-info"><?=$title ?></h1>
                 <?=$content ?>
             </div>
 

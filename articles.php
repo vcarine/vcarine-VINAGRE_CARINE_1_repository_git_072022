@@ -1,10 +1,9 @@
 <?php ob_start();?>
 
-<h1>Ma page d'articles </h1>
-
+    Ici, le contenu de ma page listant les articles
 <?php
     $content = ob_get_clean();
-
+    $title = "Les articles";
     require "template.php";
 ?>
 
