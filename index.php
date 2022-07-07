@@ -26,8 +26,8 @@
                                 à Saint-Just Saint-Rambert.</p>
                             <p class="card-text text-justify fs-5"> Mars 2022, nouvelle aventure pour obtenir Diplôme niveau 6 (Bac +3/4) <span class="text-warning fw-bold" >Développeur d'application PHP / Symfony </span> 100 % en ligne avec Openclassroom. </p>
 
-                            <a class="btn btn-success btn-lg rounded mt-5" role="button"  type="submit" href="cv/index.html"target="_blank" >Télécharger mon CV </a>
-                            <a class="btn btn-info btn-lg rounded mt-5" role="button"  type="submit" href="cv/index.html"target="_blank">Mon GitHub </a>
+                            <a class="btn btn-success btn-lg rounded mt-5" role="button"  type="submit" href="#" target="_blank"><i class="fab fa-GitHub" aria-hidden="true"></i>Télécharger mon CV </a>
+                            <a class="btn btn-info btn-lg rounded mt-5" role="button"  type="submit" href="#" target="_blank">Mon GitHub </a>
                             <a  class="btn-accueil btn-accueil1">CV</a>
                             <a href="#port" target="_blank" class="btn-accueil btn-accueil2">Mes Projets</a>
                         </div>
