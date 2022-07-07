@@ -9,7 +9,7 @@ let typewriter = new Typewriter(txtAnim,{
 typewriter
     .pauseFor(1800)
     .changeDelay(50)
-    .typeString('<strong style="font-size: 34px padding-left: 20px"> Carine Vinagre </strong> <br>')
+    .typeString('<strong style="font-size: 34px "> Carine Vinagre </strong> <br>')
     .pauseFor(300)
     .typeString(' Développeur Applications !')
     .pauseFor(1000)
