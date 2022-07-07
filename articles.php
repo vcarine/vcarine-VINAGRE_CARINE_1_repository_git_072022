@@ -94,7 +94,7 @@
 
 <?php
     $content = ob_get_clean();
-    $title = "Les articles";
+
     require "template.php";
 ?>
 
