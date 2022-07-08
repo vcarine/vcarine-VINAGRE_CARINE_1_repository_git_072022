@@ -11,14 +11,14 @@
         <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src="assets/image/Ponta-da-Piedade-Lagos.jpg" class="d-block w-100" alt="plage Portugal">
+                <img src="image/Ponta-da-Piedade-Lagos.jpg" class="d-block w-100" alt="plage Portugal">
                 <h5 class="card-title text-center mt-4 mb-4">Ponte da Piedade, Lagos </h5>
                 <p class="card-text pb-4">Ponta da Piedade se définie par ses falaises creusées dans la roche qui abritent des tunnels naturels et des cavernes secrètes. Ces falaises de couleur doré contrastent avec le vert et le turquoise de la mer, c’est absolument sublime. Pour visiter ces cavernes, il faut prendre un petit bâteau qui se trouve au bas des 182 marches.
                     Il est aussi possible de faire une excursion de kayak ou en paddle board partant de la plage Batata.. </p>
 
             </div>
             <div class="carousel-item">
-                <img src="assets/image/istockphoto-658446924-612x612.jpg" class="d-block w-100" alt="...">
+                <img src="image/istockphoto-658446924-612x612.jpg" class="d-block w-100" alt="...">
                 <h5 class="card-title text-center mt-4 mb-4">Praia do Gigi, Quinta do lago</h5>
                 <p class="card-text pb-4 ">Joli paysage au Portugal.
                     Si vous aimez la tranquillité, cette plage est pour vous. Vous devez traverser à pied un pont
@@ -26,7 +26,7 @@
                     Il y a un restaurant accessible sur cette plage ,e vue incroyable sur la mer.
             </div>
             <div class="carousel-item">
-                <img src="assets/image/portugal-Algarve.jpg" class="d-block w-100" alt="...">
+                <img src="../image/portugal-Algarve.jpg" class="d-block w-100" alt="...">
             </div>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
@@ -44,7 +44,7 @@
 
                     <div class="card-body">
                         <h5 class="card-title text-center">Les plages de l'Algarve</h5>
-                        <img src="assets/image/Ponta-da-Piedade-Lagos.jpg" class="w-100 p-3" alt="Plage" >
+                        <img src="image/Ponta-da-Piedade-Lagos.jpg" class="w-100 p-3" alt="Plage" >
                         <p class="card-text">Lieux incontournables où manger, boire et faire la fête.</p>
                     </div>
                     <div class="card-body text-center">
@@ -57,7 +57,7 @@
 
                     <div class="card-body">
                         <h5 class="card-title text-center">Restaurant</h5>
-                        <img src="assets/image/HFaro_TVC3499CB.jpg" class="w-100 p-3" alt="Plage" >
+                        <img src="image/HFaro_TVC3499CB.jpg" class="w-100 p-3" alt="Plage" >
                         <p class="card-text">L’Algarve est la région la plus au sud du Portugal,
                             bordée à l’ouest et au sud par l’océan Atlantique.
                             L'algarve se démarque avec de nombreuses plages
@@ -73,7 +73,7 @@
 
                     <div class="card-body">
                         <h5 class="card-title text-center">Se divertir</h5>
-                        <img src="../assets/image/istockphoto-658446924-612x612.jpg" class="w-100 p-3" alt="Plage" >
+                        <img src="image/istockphoto-658446924-612x612.jpg" class="w-100 p-3" alt="Plage" >
                         <p class="card-text">Lieux incontournables où manger, boire et faire la fête.</p>
                     </div>
                     <div class="card-body text-center">
