@@ -8,27 +8,7 @@ body {
     padding: 0;
     height: 100vh;
 }
-.portrait {
-    margin: 120px 0 0 20px;
-    width: 100px;
-    height: 100px;
-    padding-left: 35px;
-    border-radius: 50%;
-    position: relative;
-    box-shadow: 26px 26px 53px #292929,
-    -26px -26px 53px #3d3d3d;
 
-}
-.portrait img{
-    width: 300px;
-    height: 300px;
-    border-radius: 50%;
-    position: relative;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-}
 .text-animation{
-    font-size: 14px;
     margin: 150px 0 0 10px;
 }
