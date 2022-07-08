@@ -11,22 +11,22 @@
         <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src="assets/Ponta-da-Piedade-Lagos.jpg" class="d-block w-100" alt="plage Portugal">
-                <h5 class="card-title text-center">Ponte da Piedade, Lagos </h5>
-                <p class="card-text">Ponta da Piedade se définie par ses falaises creusées dans la roche qui abritent des tunnels naturels et des cavernes secrètes. Ces falaises de couleur doré contrastent avec le vert et le turquoise de la mer, c’est absolument sublime. Pour visiter ces cavernes, il faut prendre un petit bâteau qui se trouve au bas des 182 marches.
+                <img src="assets/image/Ponta-da-Piedade-Lagos.jpg" class="d-block w-100" alt="plage Portugal">
+                <h5 class="card-title text-center mt-4 mb-4">Ponte da Piedade, Lagos </h5>
+                <p class="card-text pb-4">Ponta da Piedade se définie par ses falaises creusées dans la roche qui abritent des tunnels naturels et des cavernes secrètes. Ces falaises de couleur doré contrastent avec le vert et le turquoise de la mer, c’est absolument sublime. Pour visiter ces cavernes, il faut prendre un petit bâteau qui se trouve au bas des 182 marches.
                     Il est aussi possible de faire une excursion de kayak ou en paddle board partant de la plage Batata.. </p>
 
             </div>
             <div class="carousel-item">
-                <img src="assets/istockphoto-658446924-612x612.jpg" class="d-block w-100" alt="...">
-                <h5 class="card-title text-center">Praia do Gigi, Quinta do lago</h5>
-                <p class="card-text">Joli paysage au Portugal.
+                <img src="assets/image/istockphoto-658446924-612x612.jpg" class="d-block w-100" alt="...">
+                <h5 class="card-title text-center mt-4 mb-4">Praia do Gigi, Quinta do lago</h5>
+                <p class="card-text pb-4 ">Joli paysage au Portugal.
                     Si vous aimez la tranquillité, cette plage est pour vous. Vous devez traverser à pied un pont
                     qui traverse la rivière protégée du parc naturelle Ria Formosa,
                     Il y a un restaurant accessible sur cette plage ,e vue incroyable sur la mer.
             </div>
             <div class="carousel-item">
-                <img src="assets/portugal-Algarve.jpg" class="d-block w-100" alt="...">
+                <img src="assets/image/portugal-Algarve.jpg" class="d-block w-100" alt="...">
             </div>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
@@ -43,8 +43,8 @@
                 <div class="card h-100">
 
                     <div class="card-body">
-                        <h5 class="card-title">Les plages de l'Algarve.</h5>
-                        <img src="assets/Ponta-da-Piedade-Lagos.jpg" class="w-100 p-3"alt="Plage" >
+                        <h5 class="card-title text-center">Les plages de l'Algarve</h5>
+                        <img src="assets/image/Ponta-da-Piedade-Lagos.jpg" class="w-100 p-3" alt="Plage" >
                         <p class="card-text">Lieux incontournables où manger, boire et faire la fête.</p>
                     </div>
                     <div class="card-body text-center">
@@ -56,8 +56,8 @@
                 <div class="card h-100">
 
                     <div class="card-body">
-                        <h5 class="card-title">Restaurant.</h5>
-                        <img src="assets/HFaro_TVC3499CB.jpg" class="w-100 p-3"alt="Plage" >
+                        <h5 class="card-title text-center">Restaurant</h5>
+                        <img src="assets/image/HFaro_TVC3499CB.jpg" class="w-100 p-3" alt="Plage" >
                         <p class="card-text">L’Algarve est la région la plus au sud du Portugal,
                             bordée à l’ouest et au sud par l’océan Atlantique.
                             L'algarve se démarque avec de nombreuses plages
@@ -72,8 +72,8 @@
                 <div class="card h-100">
 
                     <div class="card-body">
-                        <h5 class="card-title">Se divertir.</h5>
-                        <img src="assets/istockphoto-658446924-612x612.jpg" class="w-100 p-3"alt="Plage" >
+                        <h5 class="card-title text-center">Se divertir</h5>
+                        <img src="assets/image/istockphoto-658446924-612x612.jpg" class="w-100 p-3" alt="Plage" >
                         <p class="card-text">Lieux incontournables où manger, boire et faire la fête.</p>
                     </div>
                     <div class="card-body text-center">

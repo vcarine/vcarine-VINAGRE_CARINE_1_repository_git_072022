@@ -14,10 +14,10 @@ typewriter
     .typeString(' Développeur Applications !')
     .pauseFor(1000)
     .deleteChars(14)
-    .typeString('<span style="color:#f1c40f ; font-weight: bold"> Html, Css, Bootstrap</span> ')
+    .typeString('<span style="color:#f1c40f "> Html, Css, Bootstrap</span> ')
     .pauseFor(1000)
     .deleteChars(23)
-    .typeString('<span style="color: #EA39ff; font-weight: bold"> Php, Symfony, Wordpress</span> ')
+    .typeString('<span style="color: #EA39ff"> Php, Symfony, Wordpress</span> ')
     .pauseFor(1000)
 
     .start()
