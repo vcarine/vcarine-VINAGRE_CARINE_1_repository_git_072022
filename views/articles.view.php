@@ -83,18 +83,19 @@ ob_start();?>
 
             <div class="col">
                 <div class="card h-100">
-                <?php for( $i=0; $i < count($articles); $i++) ?>
+                <?php for( $i=0; $i < count($articles) ; $i++) ?>
                     <div class="card-body">
 
-                        <h5 class="card-title text-center">Les plages de l'Algarve</h5>
-                        <img src="image/Ponta-da-Piedade-Lagos.jpg" class="w-100 p-3" alt="Plage" >
-                        <p class="card-text">Lieux incontournables où manger, boire et faire la fête.</p>
+                        <h5 class="card-title text-center"><?= $articles[$i]->getTitle() ?></h5>
+                        <img src="image/<?= $articles[$i]->getPicture() ?>" class="w-100 p-3" alt="Plage" >
+                        <p class="card-text"><?= $articles[$i]->getContent() ?></p>
 
                     </div>
 
                     <div class="card-body text-center">
                         <a href=""  class="btn btn-info text-center" target="_blank" ">En savoir plus</a>
                     </div>
+                    <?php endfor;?>
                 </div>
             </div>
 
