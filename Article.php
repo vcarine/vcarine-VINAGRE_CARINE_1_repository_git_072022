@@ -11,6 +11,8 @@ class Article
     private $update;
     private $slug;
 
+
+
     public function __construct($id, $picture, $title, $content, $created, $update, $slug)
     {
         $this->id             = $id;
@@ -20,6 +22,7 @@ class Article
         $this->created        = $created;
         $this->update         = $update;
         $this->slug           = $slug;
+
     }
 
     /**

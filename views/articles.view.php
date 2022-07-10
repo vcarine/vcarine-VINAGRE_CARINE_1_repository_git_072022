@@ -1,14 +1,14 @@
 <?php
 
 
-require_once"Article.php";
+require_once "Article.php";
 
 $a1 = new Article(1,
     "Ponta-da-Piedade-Lagos.jpg",
     "Les plages de l'Algarve",
     "Lieux incontournables où manger, boire et faire la fête. ",
     "John Doe",
-    9/07/2022,
+    9 / 07 / 2022,
     "Portugal"
 );
 $a2 = new Article(2,
@@ -19,7 +19,7 @@ $a2 = new Article(2,
                             L'algarve se démarque avec de nombreuses plages
                             et son climat parfait pour des vacances au soleil.",
     "John Doe",
-    9/07/2022,
+    9 / 07 / 2022,
     "Portugal"
 );
 $a3 = new Article(3,
@@ -27,121 +27,110 @@ $a3 = new Article(3,
     "Se divertir",
     "Lieux incontournables où manger, boire et faire la fête. ",
     "John Doe",
-    9/07/2022,
+    9 / 07 / 2022,
     "Portugal"
 );
 
-$articles = [$a1, $a2, $a3];
+require_once "ArticleManager.php";
+
+$articleManager = new ArticleManager();
+$articleManager->addArticle($a1);
+$articleManager->addArticle($a2);
+$articleManager->addArticle($a3);
 
 
 
-
-ob_start();?>
+ob_start(); ?>
 
 <!--section projet-->
 
 <section class="border-bottom">
     <div class="container mb-5 pb-5">
         <h2 class="text-center mt-mb-5 mt-4 display-4">Algarve</h2>
-        <p class="card-text">Les côtes ensoleillées de l'Algarve sont le lieu idéal pour des escapades en tout genre, que ce soit pour ceux qui recherchent la vie nocturne animée de Lagos la clinquante ou ceux qui rêvent d'un séjour paisible et intime à Sagres. La région la plus méridionale du Portugal offre des attractions historiques dans l'ancienne capitale maure Silves et la fascinante Tavira, d'excellents parcours de golf, de merveilleuses plages de Praia da Luz à Armacao de Pera, des sources thermales à Caldas de Monchique et des kilomètres de grottes, falaises et baies calcaires le long de ses côtes sauvages.
+        <p class="card-text">Les côtes ensoleillées de l'Algarve sont le lieu idéal pour des escapades en tout genre,
+            que ce soit pour ceux qui recherchent la vie nocturne animée de Lagos la clinquante ou ceux qui rêvent d'un
+            séjour paisible et intime à Sagres. La région la plus méridionale du Portugal offre des attractions
+            historiques dans l'ancienne capitale maure Silves et la fascinante Tavira, d'excellents parcours de golf, de
+            merveilleuses plages de Praia da Luz à Armacao de Pera, des sources thermales à Caldas de Monchique et des
+            kilomètres de grottes, falaises et baies calcaires le long de ses côtes sauvages.
         </p>
-        <p class="fs-5 text-dark mb-md-5 mb-3 text-center">Le Portugal  </p>
+        <p class="fs-5 text-dark mb-md-5 mb-3 text-center">Le Portugal </p>
 
-      <!--  carousel-->
+        <!--  carousel-->
         <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img src="image/Ponta-da-Piedade-Lagos.jpg" class="d-block w-100" alt="plage Portugal">
-                <h5 class="card-title text-center mt-4 mb-4">Ponte da Piedade, Lagos </h5>
-                <p class="card-text pb-4">Ponta da Piedade se définie par ses falaises creusées dans la roche qui abritent des tunnels naturels et des cavernes secrètes. Ces falaises de couleur doré contrastent avec le vert et le turquoise de la mer, c’est absolument sublime. Pour visiter ces cavernes, il faut prendre un petit bâteau qui se trouve au bas des 182 marches.
-                    Il est aussi possible de faire une excursion de kayak ou en paddle board partant de la plage Batata.. </p>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="image/Ponta-da-Piedade-Lagos.jpg" class="d-block w-100" alt="plage Portugal">
+                    <h5 class="card-title text-center mt-4 mb-4">Ponte da Piedade, Lagos </h5>
+                    <p class="card-text pb-4">Ponta da Piedade se définie par ses falaises creusées dans la roche qui
+                        abritent des tunnels naturels et des cavernes secrètes. Ces falaises de couleur doré contrastent
+                        avec le vert et le turquoise de la mer, c’est absolument sublime. Pour visiter ces cavernes, il
+                        faut prendre un petit bâteau qui se trouve au bas des 182 marches.
+                        Il est aussi possible de faire une excursion de kayak ou en paddle board partant de la plage
+                        Batata.. </p>
+                </div>
+                <div class="carousel-item">
+                    <img src="image/istockphoto-658446924-612x612.jpg" class="d-block w-100" alt="...">
+                    <h5 class="card-title text-center mt-4 mb-4">Praia do Gigi, Quinta do lago</h5>
+                    <p class="card-text pb-4 ">Joli paysage au Portugal.
+                        Si vous aimez la tranquillité, cette plage est pour vous. Vous devez traverser à pied un pont
+                        qui traverse la rivière protégée du parc naturelle Ria Formosa,
+                        Il y a un restaurant accessible sur cette plage ,e vue incroyable sur la mer.
+                </div>
+                <div class="carousel-item">
+                    <img src="../image/portugal-Algarve.jpg" class="d-block w-100" alt="...">
+                </div>
             </div>
-            <div class="carousel-item">
-                <img src="image/istockphoto-658446924-612x612.jpg" class="d-block w-100" alt="...">
-                <h5 class="card-title text-center mt-4 mb-4">Praia do Gigi, Quinta do lago</h5>
-                <p class="card-text pb-4 ">Joli paysage au Portugal.
-                    Si vous aimez la tranquillité, cette plage est pour vous. Vous devez traverser à pied un pont
-                    qui traverse la rivière protégée du parc naturelle Ria Formosa,
-                    Il y a un restaurant accessible sur cette plage ,e vue incroyable sur la mer.
-            </div>
-            <div class="carousel-item">
-                <img src="../image/portugal-Algarve.jpg" class="d-block w-100" alt="...">
-            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+                    data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+                    data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-        </button>
-    </div>
 
-   <!--     card-->
+        <!--     card-->
         <div class="row row-cols-1 row-cols-md-3 g-4">
+            <?php
+            $articles = $articleManager ->getArticles();
+            for ($i = 0; $i < count($articleManager->getArticles()); $i++) { ?>
+                <div class="col">
+                    <div class="card h-100">
+                        <div class="card-body">
 
-            <div class="col">
-                <div class="card h-100">
-                <?php for( $i=0; $i < count($articles) ; $i++) ?>
-                    <div class="card-body">
+                            <h5 class="card-title text-center"><?= $articles[$i]->getTitle(); ?></h5>
+                            <img src="image/<?= $articles[$i]->getPicture() ?>" class="w-100 p-3" alt="Plage">
+                            <p class="card-text"><?= $articles[$i]->getContent() ?></p>
 
-                        <h5 class="card-title text-center"><?= $articles[$i]->getTitle() ?></h5>
-                        <img src="image/<?= $articles[$i]->getPicture() ?>" class="w-100 p-3" alt="Plage" >
-                        <p class="card-text"><?= $articles[$i]->getContent() ?></p>
+                        </div>
+
+                        <div class="card-body text-center">
+                            <a href="" class="btn btn-info text-center" target="_blank" ">En savoir plus</a>
+                        </div>
 
                     </div>
 
-                    <div class="card-body text-center">
-                        <a href=""  class="btn btn-info text-center" target="_blank" ">En savoir plus</a>
-                    </div>
-                    <?php endfor;?>
                 </div>
-            </div>
-
-            <div class="col">
-                <div class="card h-100">
-                    <div class="card-body">
-                        <h5 class="card-title text-center">Restaurant</h5>
-                        <img src="image/HFaro_TVC3499CB.jpg" class="w-100 p-3" alt="Plage" >
-                        <p class="card-text">L’Algarve est la région la plus au sud du Portugal,
-                            bordée à l’ouest et au sud par l’océan Atlantique.
-                            L'algarve se démarque avec de nombreuses plages
-                            et son climat parfait pour des vacances au soleil.</p>
-                    </div>
-                    <div class="card-body text-center">
-                        <a href=""  class="btn btn-info text-center" target="_blank" ">En savoir plus</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card h-100">
-
-                    <div class="card-body">
-                        <h5 class="card-title text-center">Se divertir</h5>
-                        <img src="image/istockphoto-658446924-612x612.jpg" class="w-100 p-3" alt="Plage" >
-                        <p class="card-text">Lieux incontournables où manger, boire et faire la fête.</p>
-                    </div>
-                    <div class="card-body text-center">
-                        <a href=""  class="btn btn-info text-center" target="_blank" ">En savoir plus</a>
-                    </div>
-                </div>
-            </div>
-
+            <?php } ?>
         </div>
 
 </section>
 
 <!--section footer-->
 <footer class="bg-light text-center py-3 my-4 border-top">
-    <a href="#" class="mb-3 mb-md-0 text-muted text-decoration-none lh-1"> Tout Droits réservés © 2022 Carine Vinagre, Inc</a>
+    <a href="#" class="mb-3 mb-md-0 text-muted text-decoration-none lh-1"> Tout Droits réservés © 2022 Carine Vinagre,
+        Inc</a>
 </footer>
 
 
 <?php
-    $content = ob_get_clean();
+$content = ob_get_clean();
 
-    require "template.php";
+require "template.php";
 ?>
 
 
