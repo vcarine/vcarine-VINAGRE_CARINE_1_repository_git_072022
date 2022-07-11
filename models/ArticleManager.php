@@ -4,32 +4,39 @@ require_once "db-manager.php";
 require_once "article.php";
 
 
-class ArticleManager extends DbManager{
+class ArticleManager extends DbManager
+{
     private $articles;
 
     public function addArticles($article)
     {
-        $this->articles [] = $article;
+        $this->articles[] = $article;
     }
 
-    /**
-     * @return mixed
-     */
+
     public function getArticles()
     {
         return $this->articles;
     }
-    public function loadingArticles(){
+
+
+
+    public function loadingArticles()
+    {
         $req = $this->getBdd()->prepare("SELECT * FROM articles");
         $req->execute();
-        $mesarticles = $req->fetchAll(PDO::FETCH_ASSOC);
+        $articlesAll = $req->fetchAll(PDO::FETCH_ASSOC);
+        /*       echo"<pre>";
+               print_r($articles);
+               echo"</pre>";*/
         $req->closeCursor();
 
-        foreach($mesarticles as $article){
-            $a = new Article($article['id'],$article['title'],$article['picture'],$article['content']);
+        foreach ($articlesAll as $article) {
+            $a = new Article($article['id'], $article['picture'], $article['content'], $article['title'], $article['created'], $article['update'], $article['slug'], $article['first_name'], $article['last_name']);
             $this->addArticles($a);
         }
     }
+
 
 }
 
