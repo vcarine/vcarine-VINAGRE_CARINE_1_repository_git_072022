@@ -86,7 +86,7 @@ ob_start(); ?>
         <!--     card-->
         <div class="row row-cols-1 row-cols-md-3 g-4">
             <?php
-            for ($i = 0; $i < count($articleManager->getArticles()); $i++) { ?>
+            for ($i = 0; $i < count($articles); $i++) { ?>
                 <div class="col">
                     <div class="card h-100">
                         <div class="card-body">
