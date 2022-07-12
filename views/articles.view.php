@@ -1,6 +1,5 @@
 <?php
 
-
 require_once "Article.php";
 
 $a1 = new Article(1,
@@ -30,14 +29,6 @@ $a3 = new Article(3,
     9 / 07 / 2022,
     "Portugal"
 );
-
-require_once "ArticleManager.php";
-
-$articleManager = new ArticleManager();
-$articleManager->addArticle($a1);
-$articleManager->addArticle($a2);
-$articleManager->addArticle($a3);
-
 
 
 ob_start(); ?>
