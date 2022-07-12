@@ -1,0 +1,15 @@
+{
+    "name": "vinag/p5_blog_php",
+    "autoload": {
+        "psr-4": {
+            "Vinag\\P5BlogPhp\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "vcarine",
+            "email": "you@example.com"
+        }
+    ],
+    "require": {}
+}

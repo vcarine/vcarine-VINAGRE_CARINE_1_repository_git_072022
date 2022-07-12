@@ -1,10 +1,12 @@
 <?php
 
+namespace models;
+
 require_once "db-manager.php";
 require_once "article.php";
 
 
-class ArticleManager extends DbManager
+class ArticleManager extends AbstractDbManager
 {
     private $articles;
 
@@ -20,12 +22,11 @@ class ArticleManager extends DbManager
     }
 
 
-
     public function loadingArticles()
     {
         $req = $this->getBdd()->prepare("SELECT * FROM articles");
         $req->execute();
-        $articlesAll = $req->fetchAll(PDO::FETCH_ASSOC);
+        $articlesAll = $req->fetchAll(\PDO::FETCH_ASSOC);
         /*       echo"<pre>";
                print_r($articles);
                echo"</pre>";*/

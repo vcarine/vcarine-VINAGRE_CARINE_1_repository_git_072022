@@ -1,5 +1,6 @@
 <?php
 
+namespace models;
 class Article
 {
 
@@ -14,18 +15,17 @@ class Article
     private $last_name;
 
 
-
     public function __construct($id, $picture, $title, $content, $created, $update, $slug, $first_name, $last_name)
     {
-        $this->id             = $id;
-        $this->picture        = $picture;
-        $this->title          = $title;
-        $this->content        = $content;
-        $this->created        = $created;
-        $this->update         = $update;
-        $this->slug           = $slug;
-        $this->first_name     = $first_name;
-        $this->last_name      = $last_name;
+        $this->id = $id;
+        $this->picture = $picture;
+        $this->title = $title;
+        $this->content = $content;
+        $this->created = $created;
+        $this->update = $update;
+        $this->slug = $slug;
+        $this->first_name = $first_name;
+        $this->last_name = $last_name;
 
     }
 

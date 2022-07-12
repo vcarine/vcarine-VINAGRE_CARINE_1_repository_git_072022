@@ -1,6 +1,8 @@
 <?php
 
-require_once "models/ArticleManager.php";
+use models\ArticleManager;
+
+require_once "src/models/ArticleManager.php";
 
 
 class ArticlesController
