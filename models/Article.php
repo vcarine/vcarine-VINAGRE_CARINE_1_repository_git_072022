@@ -10,10 +10,12 @@ class Article
     private $created;
     private $update;
     private $slug;
+    private $first_name;
+    private $last_name;
 
 
 
-    public function __construct($id, $picture, $title, $content, $created, $update, $slug)
+    public function __construct($id, $picture, $title, $content, $created, $update, $slug, $first_name, $last_name)
     {
         $this->id             = $id;
         $this->picture        = $picture;
@@ -22,6 +24,8 @@ class Article
         $this->created        = $created;
         $this->update         = $update;
         $this->slug           = $slug;
+        $this->first_name     = $first_name;
+        $this->last_name      = $last_name;
 
     }
 
@@ -135,6 +139,38 @@ class Article
     public function setSlug($slug): void
     {
         $this->slug = $slug;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getFirstName()
+    {
+        return $this->first_name;
+    }
+
+    /**
+     * @param mixed $first_name
+     */
+    public function setFirstName($first_name): void
+    {
+        $this->first_name = $first_name;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getLastName()
+    {
+        return $this->last_name;
+    }
+
+    /**
+     * @param mixed $last_name
+     */
+    public function setLastName($last_name): void
+    {
+        $this->last_name = $last_name;
     }
 
 

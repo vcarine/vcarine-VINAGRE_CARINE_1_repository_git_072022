@@ -2,33 +2,6 @@
 
 require_once "models/Article.php";
 
-$a1 = new Article(1,
-    "Ponta-da-Piedade-Lagos.jpg",
-    "Les plages de l'Algarve",
-    "Lieux incontournables où manger, boire et faire la fête. ",
-    "John Doe",
-    9 / 07 / 2022,
-    "Portugal"
-);
-$a2 = new Article(2,
-    "HFaro_TVC3499CB.jpg",
-    "Restaurant",
-    "L’Algarve est la région la plus au sud du Portugal,
-                            bordée à l’ouest et au sud par l’océan Atlantique.
-                            L'algarve se démarque avec de nombreuses plages
-                            et son climat parfait pour des vacances au soleil.",
-    "John Doe",
-    9 / 07 / 2022,
-    "Portugal"
-);
-$a3 = new Article(3,
-    "istockphoto-658446924-612x612.jpg",
-    "Se divertir",
-    "Lieux incontournables où manger, boire et faire la fête. ",
-    "John Doe",
-    9 / 07 / 2022,
-    "Portugal"
-);
 
 ob_start(); ?>
 
@@ -68,7 +41,12 @@ ob_start(); ?>
                         Il y a un restaurant accessible sur cette plage ,e vue incroyable sur la mer.
                 </div>
                 <div class="carousel-item">
-                    <img src="../image/portugal-Algarve.jpg" class="d-block w-100" alt="...">
+                    <img src="image/portugal-Algarve.jpg" class="d-block w-100" alt="...">
+                    <h5 class="card-title text-center mt-4 mb-4">Praia do Gigi, Quinta do lago</h5>
+                    <p class="card-text pb-4 ">Joli paysage au Portugal.
+                        Si vous aimez la tranquillité, cette plage est pour vous. Vous devez traverser à pied un pont
+                        qui traverse la rivière protégée du parc naturelle Ria Formosa,
+                        Il y a un restaurant accessible sur cette plage ,e vue incroyable sur la mer.
                 </div>
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
@@ -86,7 +64,8 @@ ob_start(); ?>
         <!--     card-->
         <div class="row row-cols-1 row-cols-md-3 g-4">
             <?php
-            for ($i = 0; $i < count($articles); $i++) { ?>
+            for ($i = 0; $i < count($articles); $i++) {
+                ?>
                 <div class="col">
                     <div class="card h-100">
                         <div class="card-body">
