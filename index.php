@@ -1,10 +1,12 @@
 <?php
 
 
+use controllers\ArticlesController;
+
 define('URL', str_replace("index.php", "", (isset($_SERVER['HTTPS']) ? "https" : "http") .
     "://$_SERVER[HTTP_HOST]$_SERVER[PHP_SELF]"));
 
-require "controllers/ArticlesController.php";
+require "src/controllers/ArticlesController.php";
 
 $articleController = new ArticlesController;
 try {
@@ -23,7 +25,7 @@ try {
                 if (empty($url[1])) {
                     $articleController->displayArticles();
                 } else if ($url[1] === "a") {
-                    echo $articleController->displayArticles($url[2]);
+                    echo $articleController->displayArticle($url[2]);
                 } else if ($url[1] === "l") {
                     echo "ajouter un article";
                 } else if ($url[1] === "m") {
