@@ -1,6 +1,6 @@
 <?php
 
-require_once "Article.php";
+require_once "models/Article.php";
 
 $a1 = new Article(1,
     "Ponta-da-Piedade-Lagos.jpg",
@@ -29,7 +29,6 @@ $a3 = new Article(3,
     9 / 07 / 2022,
     "Portugal"
 );
-
 
 ob_start(); ?>
 
@@ -87,8 +86,7 @@ ob_start(); ?>
         <!--     card-->
         <div class="row row-cols-1 row-cols-md-3 g-4">
             <?php
-            $articles = $articleManager ->getArticles();
-            for ($i = 0; $i < count($articleManager->getArticles()); $i++) { ?>
+            for ($i = 0; $i < count($articles); $i++) { ?>
                 <div class="col">
                     <div class="card h-100">
                         <div class="card-body">
