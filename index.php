@@ -1,12 +1,13 @@
 <?php
 
+
     if(empty($_GET['page'])){
-        require "views/accueil.php";
+        require "views/accueil.view.php";
     }else{
         switch($_GET['page']){
-            case "accueil" :  require "views/accueil.php";
+            case "accueil" :  require "views/accueil.view.php";
             break;
-            case "articles" :  require "views/articles.php";
+            case "articles" :  require "views/articles.view.php";
             break;
         }
     }
