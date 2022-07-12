@@ -73,7 +73,7 @@
 
                     <div class="card-body">
                         <h5 class="card-title text-center">Se divertir</h5>
-                        <img src="assets/image/istockphoto-658446924-612x612.jpg" class="w-100 p-3" alt="Plage" >
+                        <img src="../assets/image/istockphoto-658446924-612x612.jpg" class="w-100 p-3" alt="Plage" >
                         <p class="card-text">Lieux incontournables où manger, boire et faire la fête.</p>
                     </div>
                     <div class="card-body text-center">
