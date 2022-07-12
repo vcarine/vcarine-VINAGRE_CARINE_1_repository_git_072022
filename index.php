@@ -13,7 +13,7 @@ try {
     } else {
         $url = explode("/", filter_var($_GET['page']), FILTER_SANITIZE_URL);
         /*    echo "<pre>";*/
-        print_r($url);
+/*        print_r($url);*/
 
         switch ($url[0]) {
             case "accueil" :
@@ -23,12 +23,12 @@ try {
                 if (empty($url[1])) {
                     $articleController->displayArticles();
                 } else if ($url[1] === "a") {
-                    echo "affichage d'un article";
+                    echo $articleController->displayArticles($url[2]);
                 } else if ($url[1] === "l") {
                     echo "ajouter un article";
-                } else if ($url[1] === "l") {
+                } else if ($url[1] === "m") {
                     echo "modifie un article";
-                } else if ($url[1] === "l") {
+                } else if ($url[1] === "s") {
                     echo "supprimer un article";
                 } else {
                     throw new Exception("La page n'existe pas");
