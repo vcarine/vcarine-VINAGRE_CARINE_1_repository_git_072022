@@ -1,7 +1,7 @@
 <?php
 
-namespace controllers;
 
+use Manager\ArticleManager;
 
 require_once "src/models/Manager/ArticleManager.php";
 

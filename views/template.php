@@ -51,7 +51,6 @@
 
 
             <div class="container">
-                <h1 class=""><?= $titre ?></h1>
                 <?=$content ?>
             </div>
 

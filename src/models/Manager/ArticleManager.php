@@ -1,6 +1,8 @@
 <?php
 
-namespace models\Manager;
+namespace Manager;
+
+use models\Article;
 
 require_once "db-connexion.php";
 require_once "src/models/Class/Article.php";
