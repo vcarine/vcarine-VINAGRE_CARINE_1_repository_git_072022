@@ -5,7 +5,7 @@ use controllers\ArticlesController;
 define('URL', str_replace("index.php", "", (isset($_SERVER['HTTPS']) ? "https" : "http") .
     "://$_SERVER[HTTP_HOST]$_SERVER[PHP_SELF]"));
 
-require "src/controllers/ArticlesController.php";
+require "src/controller/ArticlesController.php";
 
 $articleController = new ArticlesController;
 try {

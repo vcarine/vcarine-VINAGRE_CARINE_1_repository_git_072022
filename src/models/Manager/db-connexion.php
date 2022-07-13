@@ -1,6 +1,6 @@
 <?php
 
-namespace models\Manager;
+/*namespace Manager;*/
 
 abstract class AbstractDbManager
 {

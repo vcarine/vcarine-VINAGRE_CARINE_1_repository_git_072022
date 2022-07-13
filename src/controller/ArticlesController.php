@@ -1,10 +1,8 @@
 <?php
+require_once "src\models\Manager\ArticleManager.php";
+/*namespace ArticlesController;
 
-
-use Manager\ArticleManager;
-
-require_once "src/models/Manager/ArticleManager.php";
-
+use Model\Manager\ArticleManager;*/
 
 class ArticlesController
 {

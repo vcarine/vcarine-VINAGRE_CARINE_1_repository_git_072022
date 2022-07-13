@@ -1,14 +1,15 @@
 <?php
 
-namespace Manager;
+/*namespace Model\Manager;
 
-use models\Article;
+use Manager\AbstractDbManager;
+use models\Article;*/
 
 require_once "db-connexion.php";
 require_once "src/models/Class/Article.php";
 
 
-class ArticleManager extends \models\Manager\AbstractDbManager
+class ArticleManager extends AbstractDbManager
 {
     private $articles; // Tableau d'article
 

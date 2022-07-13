@@ -1,6 +1,6 @@
 <?php
-namespace view\articles;
-
+/*namespace view\articles;
+*/
 
 require_once "src/models/Class/Article.php";
 
