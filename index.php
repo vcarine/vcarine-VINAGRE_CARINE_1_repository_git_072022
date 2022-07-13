@@ -7,6 +7,7 @@ define('URL', str_replace("index.php", "", (isset($_SERVER['HTTPS']) ? "https" :
     "://$_SERVER[HTTP_HOST]$_SERVER[PHP_SELF]"));
 
 require "src/controllers/ArticlesController.php";
+require "vendor/autoload.php";
 
 $articleController = new ArticlesController;
 try {
@@ -24,12 +25,12 @@ try {
             case "articles" :
                 if (empty($url[1])) {
                     $articleController->displayArticles();
-                } else if ($url[1] === "a") {
-                    echo $articleController->displayArticle($url[2]);
                 } else if ($url[1] === "l") {
+                    $articleController->displayArticle($url[2]);
+                } else if ($url[1] === "a") {
                     echo "ajouter un article";
                 } else if ($url[1] === "m") {
-                    echo "modifie un article";
+                    echo "modifier un article";
                 } else if ($url[1] === "s") {
                     echo "supprimer un article";
                 } else {

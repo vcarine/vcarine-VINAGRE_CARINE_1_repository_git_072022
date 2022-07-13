@@ -1,12 +1,12 @@
 <?php
 
-namespace models;
+namespace models\Manager;
 
-require_once "db-manager.php";
-require_once "article.php";
+require_once "db-connexion.php";
+require_once "src/models/Class/Article.php";
 
 
-class ArticleManager extends AbstractDbManager
+class ArticleManager extends \models\Manager\AbstractDbManager
 {
     private $articles; // Tableau d'article
 
@@ -38,11 +38,11 @@ class ArticleManager extends AbstractDbManager
 
     public function getArticleById($id)
     {
-        for ($id = 0; $id < count($this->articles); $id++)
+        for($i=0; $i < count($this->articles);$i++)
         {
-            if ($this->articles[$id]->getId() === $id)
+            if($this->articles[$i]->getId() === $id)
             {
-                return $this->articles[$id];
+                return $this->articles[$i];
             }
         }
     }

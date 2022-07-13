@@ -1,6 +1,7 @@
 <?php
 
-namespace models;
+namespace models\Manager;
+
 abstract class AbstractDbManager
 {
     private static $pdo;

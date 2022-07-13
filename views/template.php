@@ -5,7 +5,7 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title></title>
+    <title>P5_MonBlog</title>
 
     <!--    css-->
     <link rel="stylesheet" href="../public/css/style.css">
@@ -51,6 +51,7 @@
 
 
             <div class="container">
+                <h1 class=""><?= $titre ?></h1>
                 <?=$content ?>
             </div>
 

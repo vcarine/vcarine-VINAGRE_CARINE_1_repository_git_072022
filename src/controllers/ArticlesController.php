@@ -2,9 +2,8 @@
 
 namespace controllers;
 
-use models\ArticleManager;
 
-require_once "src/models/ArticleManager.php";
+require_once "src/models/Manager/ArticleManager.php";
 
 
 class ArticlesController
@@ -27,7 +26,7 @@ class ArticlesController
     public function displayArticle($id)
     {
         $article = $this->articleManager->getArticleById($id);
-        echo $article->getTitle();
+        require "views/displayArticle.view.php";
     }
 }
 
