@@ -1,16 +1,14 @@
 <?php
 
-/*use Controller\ArticlesController;*/
-
-
-
 define('URL', str_replace("index.php", "", (isset($_SERVER['HTTPS']) ? "https" : "http") .
     "://$_SERVER[HTTP_HOST]$_SERVER[PHP_SELF]"));
 
 require "src/controller/ArticlesController.php";
-/*require "vendor/autoload.php";*/
+/*require "vendor/autoload.php";
+use ArticlesController\ArticlesController;*/
+/*use App\src\controllerArticlesController;*/
 
-$articleController = new ArticlesController;
+$articleController = new ArticlesController();
 try {
     if (empty($_GET['page'])) {
         require "views/accueil.view.php";
@@ -26,14 +24,14 @@ try {
             case "articles" :
                 if (empty($url[1])) {
                     $articleController->displayArticles();
-                } else if ($url[1] === "l") {
+                } else if($url[1] === "l") { //a = article
                     $articleController->displayArticle($url[2]);
-                } else if ($url[1] === "a") {
-                    echo "ajouter un article";
-                } else if ($url[1] === "m") {
-                    echo "modifier un article";
-                } else if ($url[1] === "s") {
-                    echo "supprimer un article";
+                } else if($url[1] === "a") {
+                    echo "ajouter d'un livre";
+                } else if($url[1] === "m") {
+                    echo "modifier un livre";
+                } else if($url[1] === "s") {
+                    echo "suppression d'un livre";
                 } else {
                     throw new Exception("La page n'existe pas");
                 }

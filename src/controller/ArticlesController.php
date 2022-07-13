@@ -1,8 +1,8 @@
 <?php
-require_once "src\models\Manager\ArticleManager.php";
-/*namespace ArticlesController;
 
-use Model\Manager\ArticleManager;*/
+
+require_once "src/models/Manager/ArticleManager.php";
+
 
 class ArticlesController
 {
@@ -26,6 +26,8 @@ class ArticlesController
         $article = $this->articleManager->getArticleById($id);
         require "views/displayArticle.view.php";
     }
+
+
 }
 
 

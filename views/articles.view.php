@@ -71,16 +71,14 @@ ob_start(); ?>
                 <div class="col">
                     <div class="card h-100">
                         <div class="card-body">
-
                             <p class="card-title text-center fw-bold"><?= $articles[$i]->getContent()  ?></p>
-                            <img src="image/<?= $articles[$i]->getPicture() ?>" class="w-100 p-3" alt="Plage">
-                            <h5 class="card-text "><?= $articles[$i]->getTitle(); ?></h5>
-
-
+                            <img src="public/images/<?= $articles[$i]->getPicture() ?>" class="w-100 p-3" alt="Plage">
+                            <h5 class="card-text "><a class=" text-dark text-decoration-none" href="<?= URL ?>articles/l/<?= $articles[$i]->getId(); ?>"><?= $articles[$i]->getTitle(); ?></a></h5>
                         </div>
 
                         <div class="card-body text-center">
-                            <a href="" class="btn btn-info text-center" target="_blank" ">En savoir plus</a>
+                            <a href="" class="btn btn-info text-center" target="_blank" ">Modifier</a>
+                            <a href="" class="btn btn-success text-center" target="_blank" ">Supprimer</a>
                         </div>
 
                     </div>

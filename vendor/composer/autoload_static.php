@@ -12,22 +12,18 @@ class ComposerStaticInit342c9e3217e1ff3a2230d9758d1df7bd
     );
 
     public static $prefixLengthsPsr4 = array (
-        'V' => 
-        array (
-            'Vinag\\P5BlogPhp\\' => 16,
-        ),
         'S' => 
         array (
             'Symfony\\Polyfill\\Mbstring\\' => 26,
             'Symfony\\Component\\VarDumper\\' => 28,
         ),
+        'A' => 
+        array (
+            'App\\' => 4,
+        ),
     );
 
     public static $prefixDirsPsr4 = array (
-        'Vinag\\P5BlogPhp\\' => 
-        array (
-            0 => __DIR__ . '/../..' . '/src',
-        ),
         'Symfony\\Polyfill\\Mbstring\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/polyfill-mbstring',
@@ -35,6 +31,10 @@ class ComposerStaticInit342c9e3217e1ff3a2230d9758d1df7bd
         'Symfony\\Component\\VarDumper\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/var-dumper',
+        ),
+        'App\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/App',
         ),
     );
 

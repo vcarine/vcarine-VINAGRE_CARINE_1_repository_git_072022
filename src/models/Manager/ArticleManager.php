@@ -1,11 +1,9 @@
 <?php
 
-/*namespace Model\Manager;
+/*namespace models;
 
-use Manager\AbstractDbManager;
-use models\Article;*/
-
-require_once "db-connexion.php";
+use App\*/
+require_once "src/models/Manager/db-connexion.php";
 require_once "src/models/Class/Article.php";
 
 
