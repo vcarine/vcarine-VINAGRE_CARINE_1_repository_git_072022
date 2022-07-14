@@ -1,8 +1,6 @@
 <?php
-/*namespace view\articles;
-*/
 
-require_once "src/models/Class/Article.php";
+require_once "models/Article.php";
 
 
 ob_start(); ?>
@@ -71,9 +69,10 @@ ob_start(); ?>
                 <div class="col">
                     <div class="card h-100">
                         <div class="card-body">
-                            <p class="card-title text-center fw-bold"><?= $articles[$i]->getContent()  ?></p>
-                            <img src="public/images/<?= $articles[$i]->getPicture() ?>" class="w-100 p-3" alt="Plage">
-                            <h5 class="card-text "><a class=" text-dark text-decoration-none" href="<?= URL ?>articles/l/<?= $articles[$i]->getId(); ?>"><?= $articles[$i]->getTitle(); ?></a></h5>
+                            <h5 class="card-title text-center"><?= $articles[$i]->getContent() ?></h5>
+                            <img src="image/<?= $articles[$i]->getPicture() ?>" class="w-100 p-3" alt="Plage">
+                            <p class="card-text"><?= $articles[$i]->getTitle(); ?></p>
+
                         </div>
 
                         <div class="card-body text-center">
@@ -99,7 +98,7 @@ ob_start(); ?>
 <?php
 $content = ob_get_clean();
 
-require "template.php";
+require "views/template.php";
 ?>
 
 

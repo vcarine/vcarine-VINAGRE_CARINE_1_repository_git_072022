@@ -24,11 +24,11 @@ final class ImagineCaster
         $imgData = $c->get('png');
         if (\strlen($imgData) > 1 * 1000 * 1000) {
             $a += [
-                Caster::PREFIX_VIRTUAL.'images' => new ConstStub($c->getSize()),
+                Caster::PREFIX_VIRTUAL.'image' => new ConstStub($c->getSize()),
             ];
         } else {
             $a += [
-                Caster::PREFIX_VIRTUAL.'images' => new ImgStub($imgData, 'images/png', $c->getSize()),
+                Caster::PREFIX_VIRTUAL.'image' => new ImgStub($imgData, 'image/png', $c->getSize()),
             ];
         }
 

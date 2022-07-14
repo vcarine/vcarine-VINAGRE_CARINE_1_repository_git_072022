@@ -15,13 +15,11 @@ class ArticlesController
 
     }
 
-    public function displayArticles()
+   public function displayArticles()
     {
         $articles = $this->articleManager->getArticles();
         require "views/articles.view.php";
     }
-    public function displayArticle($id){
-        $livre = $this->articleManager->getArticleById($id);
-        require "views/displayArticle.view.php";
-    }
 }
+
+

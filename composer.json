@@ -1,16 +1,9 @@
 {
-    "name": "vinag/p5_blog_php",
+    "name": "ifouh/test-new",
     "autoload": {
         "psr-4": {
-            "App\\" : "App/"
-
+            "App\\": ""
         }
     },
-    "authors": [
-        {
-            "name": "vcarine",
-            "email": "you@example.com"
-        }
-    ],
     "require": {}
 }

@@ -2,19 +2,19 @@
 ob_start();
 ?>
 
-    <div class="row ">
-
+    <div class="row">
         <div class="col-6">
-            <img src="<?= URL ?>public/images/<?= $article->getPicture() ?>" class="w-100 p-3" alt="Plage">
+            <img src="<?= URL ?>public/images/<?= $livre->getPicture(); ?>">
         </div>
         <div class="col-6">
-            <p class="card-title text-center fw-bold"><?= $article->getContent() ?></p>
+            <p>Titre : <?= $livre->getTitle(); ?></p>
+            <p>Article : <?= $livre->getContent(); ?></p>
+
         </div>
     </div>
 
-
-
 <?php
 $content = ob_get_clean();
-require "template.php";
+$titre = $livre->getTitre();
+require "views/template.php";
 ?>
