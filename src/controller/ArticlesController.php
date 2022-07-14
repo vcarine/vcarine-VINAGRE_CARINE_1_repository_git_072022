@@ -24,4 +24,7 @@ class ArticlesController
         $livre = $this->articleManager->getArticleById($id);
         require "views/displayArticle.view.php";
     }
+    public function addArticles(){
+        require "views/addArticle.view.php";
+    }
 }

@@ -20,6 +20,15 @@ class ArticlesController
         $articles = $this->articleManager->getArticles();
         require "views/articles.view.php";
     }
+    public function displayArticle($id)
+    {
+        $articles = $this->articleManager->getArticleById($id);
+        require "views/displayArticle.view.php";
+    }
+    public function addArticles()
+    {
+        require "views/addArticle.view.php";
+    }
 }
 
 
