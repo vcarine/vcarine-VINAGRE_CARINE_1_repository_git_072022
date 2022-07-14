@@ -28,13 +28,13 @@ try {
                 } else if ($url[1] === "d") {
                     $articleController->displayArticle($url[2]);
                 } else if ($url[1] === "a") {
-                    $articleController->addArticles();
+                    $articleController->addArticle();
                 } else if ($url[1] === "m") {
                     echo "modifie un article";
                 } else if ($url[1] === "s") {
                     echo "supprimer un article";
                 } else if ($url[1] === "av") {
-                    echo "validation d'ajout d'un article";
+                    $articleController->addArticleValidation();
                 } else {
                     throw new Exception("La page n'existe pas");
                 }

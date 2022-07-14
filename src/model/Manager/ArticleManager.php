@@ -12,13 +12,10 @@ class ArticleManager extends AbstractDbManager
     {
         $this->articles[] = $article;
     }
-
-
     public function getArticles()
     {
         return $this->articles;
     }
-
     public function loadingArticles()
     {
         $req = $this->getBdd()->prepare("SELECT * FROM articles");
@@ -35,16 +32,35 @@ class ArticleManager extends AbstractDbManager
         }
 
     }
-
     public function getArticleById($id)
     {
         for($i=0; $i < count($this->articles);$i++)
         {
-            if($this->articles[$i]->getId() === $id){
+            if($this->articles[$i]->getId() === $id)
+            {
                 return $this->articles[$i];
             }
-        }
 
+        }
+    }
+
+    public function addArticleBdd($title, $article,$image)
+    {
+        $req = " INSERT INTO articles (title, article, image)
+                  VALUES (:title, :article, :image)";
+        $stmt = $this->getBdd()->prepare($req);
+        $stmt->bindValue(":title", $title, PDO::PARAM_STR);
+        $stmt->bindValue(":article", $article, PDO::PARAM_STR);
+        $stmt->bindValue(":image", $image, PDO::PARAM_STR);
+
+        $resultat = $stmt->execute();
+
+        $stmt->closeCursor();
+
+        if ($resultat > 0){
+            $article = new Article($this->getBdd()->lastInsertID(),$title, $article,$image);
+        ^$this->addArticle($article);
+        }
     }
 
 

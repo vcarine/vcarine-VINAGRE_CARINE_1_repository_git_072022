@@ -7,8 +7,8 @@ ob_start();
             <input type="text" class="form-control" id="titre" name="titre">
         </div>
         <div class="form-group mb-2">
-            <label for="commentaires">Articles: </label>
-            <input type="number" class="form-control" id="nbPages" name="nbPages">
+            <label for="articles">Articles: </label>
+            <input type="number" class="form-control" id="articles" name="articles">
         </div>
         <div class="form-group mb-2">
             <label for="picture">Image : </label>
