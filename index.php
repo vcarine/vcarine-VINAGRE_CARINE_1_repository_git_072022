@@ -1,48 +1,19 @@
 <?php
-
 include 'vendor/autoload.php';
 
-use App\controllers\ArticlesController;
+require 'include.php';
 
-define('URL', str_replace("index.php", "", (isset($_SERVER['HTTPS']) ? "https" : "http") .
-"://".$_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF']));
-
-$articleController = new ArticlesController;
-
-
-try {
-    if (empty($_GET['page'])) {
-        require "views/accueil.view.php";
-    } else {
-        $url = explode("/", filter_var($_GET['page']), FILTER_SANITIZE_URL);
-        /*    echo "<pre>";*/
-/*        print_r($url);*/
-
-        switch ($url[0]) {
-            case "accueil" :
-                require "views/accueil.view.php";
-                break;
-            case "articles" :
-                if(empty($url[1])){
-                    $articleController->displayArticles();
-                } else if($url[1] === "l") {
-                    $articleController->showArticle($url[2]);
-                }  else if($url[1] === "a") {
-                    echo "ajouter d'article";
-                } else if($url[1] === "m") {
-                    echo "modifier un article";
-                } else if($url[1] === "s") {
-                    echo "suppression d'un article";
-                }else {
-                    throw new Exception("La page n'existe pas");
-                }
-                break;
-            default :
-                throw new Exception("La page n'existe pas");
-        }
+// Page par défaut de notre application
+if(!isset($_GET['controller']) || !isset($_GET['action'])){
+    header('Location: index.php?controller=article&action=list');
+}
+elseif  ($_GET['controller'] == 'article'){
+    $controller = new ArticleController();
+    if ($_GET['action'] == 'detail'&& isset($_GET['id'])){
+    /*    var_dump('je suis là');*/
+        $controller->detailArticle();
+    }elseif ($_GET['action'] == 'list'){
+        $controller->listArticle();
     }
 }
-catch
-(Exception $e) {
-    echo $e->getMessage();
-}
+
