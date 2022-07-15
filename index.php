@@ -26,15 +26,13 @@ try {
                 if(empty($url[1])){
                     $articleController->displayArticles();
                 } else if($url[1] === "l") {
-                    $articleController->displayArticle($url[2]);
-                } else if($url[1] === "a") {
-                   /* $articleController->ajoutLivre();*/
+                    $articleController->showArticle($url[2]);
+                }  else if($url[1] === "a") {
+                    echo "ajouter d'article";
                 } else if($url[1] === "m") {
-                    echo "modifier un livre";
+                    echo "modifier un article";
                 } else if($url[1] === "s") {
-                 /*   $articleController->suppressionLivre($url[2]);*/
-                } else if($url[1] === "av") {
-                    /*$articleController->ajoutLivreValidation();*/
+                    echo "suppression d'un article";
                 }else {
                     throw new Exception("La page n'existe pas");
                 }

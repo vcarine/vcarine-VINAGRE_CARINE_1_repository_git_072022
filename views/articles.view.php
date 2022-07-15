@@ -23,7 +23,7 @@ ob_start(); ?>
         <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="image/Ponta-da-Piedade-Lagos.jpg" class="d-block w-100" alt="plage Portugal">
+                    <img src="public/images/Ponta-da-Piedade-Lagos.jpg" class="d-block w-100" alt="plage Portugal">
                     <h5 class="card-title text-center mt-4 mb-4">Ponte da Piedade, Lagos </h5>
                     <p class="card-text pb-4">Ponta da Piedade se définie par ses falaises creusées dans la roche qui
                         abritent des tunnels naturels et des cavernes secrètes. Ces falaises de couleur doré contrastent
@@ -69,17 +69,21 @@ ob_start(); ?>
                 <div class="col">
                     <div class="card h-100">
                         <div class="card-body">
-                            <p class="card-text text-center fw-bold"><?= $articles[$i]->getContent() ?></p>
+                            <p class="card-text text-center"><?= $articles[$i]->getContent() ?></p>
                             <img src="public/images/<?= $articles[$i]->getPicture() ?>" class="w-100 p-3" alt="Plage">
-                            <h5 class="card-title text-center"><?= $articles[$i]->getTitle(); ?></h5>
-
-
+                            <a class="card-title text-center"><a href="<?URL?> articles/l/"<?= $articles[$i]->getTitle(); ?>></a><?= $articles[$i]->getTitle(); ?></a></h5>
 
                         </div>
 
                         <div class="card-body text-center">
-                            <a href="" class="btn btn-info text-center" target="_blank" ">En savoir plus</a>
+                            <button class="btn btn-info text-center" target="_blank" >Modifier</a></button>
+                            <button class="btn btn-success text-center" target="_blank" >Supprimer</a></button>
+                            <button class="btn btn-warning text-center" target="_blank" >Ajouter</a></button>
                         </div>
+                        <form method="POST" action="<?= URL ?>livres/s/<?= $articles[$i]->getId(); ?>"
+                              onSubmit="return confirm('Voulez-vous vraiment supprimer l'article' ?');">
+
+                        </form>
 
                     </div>
 
@@ -98,7 +102,7 @@ ob_start(); ?>
 
 <?php
 $content = ob_get_clean();
-
+$title = "Les articles";
 require "template.php";
 ?>
 

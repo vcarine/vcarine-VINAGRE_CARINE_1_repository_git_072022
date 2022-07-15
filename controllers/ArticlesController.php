@@ -15,15 +15,17 @@ class ArticlesController
 
     }
 
-   public function displayArticles()
+    public function displayArticles()
     {
         $articles = $this->articleManager->getArticles();
         require "views/articles.view.php";
     }
 
-    public function displayArticle($id)
+    public function showArticle($id)
     {
-        $article = $this->articleManager->getArticleById($id);
+     /*   echo "L'id est : ".$id;*/ // affichage of
+       $article = $this->articleManager->getArticleById($id);
+       require "views/show.article.view.php";
     }
 }
 

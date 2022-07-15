@@ -6,11 +6,13 @@ use PDO;
 
 class ArticleManager extends DbManager
 {
-    private $articles; // tableau de livre
+    private $articles; // tableau article
 
-    public function addArticle($article){
+    public function addArticle($article)
+    {
         $this->articles[] = $article;
     }
+
     public function getArticles()
     {
         return $this->articles;
@@ -28,14 +30,19 @@ class ArticleManager extends DbManager
 
         foreach ($articlesAll as $article) {
             $l = new Article($article['id'], $article['picture'], $article['content'], $article['title'], $article['created'], $article['update'], $article['slug'], $article['first_name'], $article['last_name']);
-            $this->addArticles($l);
+            $this->addArticle($l);
         }
     }
 
     public function getArticleById($id)
     {
-
+        for ($i = 0; $i < count($this->articles); $i++)
+        {
+            if ($this->articles[$i]->getId() === $id)
+            {
+                return $this->articles[$i];
+            }
+        }
     }
-
 }
 
