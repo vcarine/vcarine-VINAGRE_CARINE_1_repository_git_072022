@@ -69,23 +69,21 @@ ob_start(); ?>
                 <div class="col">
                     <div class="card h-100">
                         <div class="card-body">
-                            <h5 class="card-title text-center"><?= $articles[$i]->getContent() ?></h5>
-                            <img src="public/images/<?= $articles[$i]->getPicture() ?>" class="w-100 p-3" alt="Plage">
-                            <p class="card-text"><a class="text-decoration-none text-dark" href="<?= URL ?>articles/d/<?= $articles[$i]->getId(); ?>"> <?= $articles[$i]->getTitle(); ?></p>
+
+                            <h5 class="card-title text-center"><?= $articles[$i]->getTitle(); ?></h5>
+                            <img src="image/<?= $articles[$i]->getPicture() ?>" class="w-100 p-3" alt="Plage">
+                            <p class="card-text"><?= $articles[$i]->getContent() ?></p>
 
                         </div>
 
                         <div class="card-body text-center">
-                            <a href="" class="btn btn-info text-center" target="_blank" >Modifier</a>
-                            <a href="" class="btn btn-success text-center" target="_blank" >Supprimer</a>
-                            <a href="<?= URL ?>articles/a" class="btn btn-warning text-center " target="_blank"> Ajouter</a>
+                            <a href="" class="btn btn-info text-center" target="_blank" ">En savoir plus</a>
                         </div>
 
                     </div>
 
                 </div>
             <?php } ?>
-
         </div>
 
 </section>
@@ -100,7 +98,7 @@ ob_start(); ?>
 <?php
 $content = ob_get_clean();
 
-require "views/template.php";
+require "template.php";
 ?>
 
 

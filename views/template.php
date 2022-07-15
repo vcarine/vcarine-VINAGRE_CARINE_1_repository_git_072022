@@ -5,7 +5,7 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Mon blog</title>
+    <title></title>
 
     <!--    css-->
     <link rel="stylesheet" href="public/style.css">
@@ -28,10 +28,10 @@
         <div class="collapse navbar-collapse  " id="navbarColor01">
             <ul class="navbar-nav w-100 d-flex justify-content-start ">
                 <li class="nav-item">
-                    <a class="nav-link active" href="<?= URL ?>accueil">Accueil</a>
+                    <a class="nav-link active" href="accueil">Accueil</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="<?= URL ?>articles">Article</a>
+                    <a class="nav-link" href="articles">Article</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Contact</a>

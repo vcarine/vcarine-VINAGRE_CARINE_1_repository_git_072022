@@ -25,16 +25,14 @@ try {
             case "articles" :
                 if (empty($url[1])) {
                     $articleController->displayArticles();
-                } else if ($url[1] === "d") {
-                    $articleController->displayArticle($url[2]);
                 } else if ($url[1] === "a") {
-                    $articleController->addArticle();
+                    echo $articleController->displayArticles($url[2]);
+                } else if ($url[1] === "l") {
+                    echo "ajouter un article";
                 } else if ($url[1] === "m") {
                     echo "modifie un article";
                 } else if ($url[1] === "s") {
                     echo "supprimer un article";
-                } else if ($url[1] === "av") {
-                    $articleController->addArticleValidation();
                 } else {
                     throw new Exception("La page n'existe pas");
                 }
