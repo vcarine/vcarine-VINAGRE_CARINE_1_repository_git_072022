@@ -2,24 +2,19 @@
 
 namespace App\models;
 
-use \PDO;
+use PDO;
 
 class ArticleManager extends DbManager
 {
-    private $articles;
+    private $articles; // tableau de livre
 
-    public function addArticles($article)
-    {
+    public function addArticle($article){
         $this->articles[] = $article;
     }
-
-
     public function getArticles()
     {
         return $this->articles;
     }
-
-
 
     public function loadingArticles()
     {
@@ -32,11 +27,15 @@ class ArticleManager extends DbManager
         $req->closeCursor();
 
         foreach ($articlesAll as $article) {
-            $a = new Article($article['id'], $article['picture'], $article['content'], $article['title'], $article['created'], $article['update'], $article['slug'], $article['first_name'], $article['last_name']);
-            $this->addArticles($a);
+            $l = new Article($article['id'], $article['picture'], $article['content'], $article['title'], $article['created'], $article['update'], $article['slug'], $article['first_name'], $article['last_name']);
+            $this->addArticles($l);
         }
     }
 
+    public function getArticleById($id)
+    {
+
+    }
 
 }
 

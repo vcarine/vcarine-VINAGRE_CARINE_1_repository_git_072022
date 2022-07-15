@@ -33,7 +33,7 @@ ob_start(); ?>
                         Batata.. </p>
                 </div>
                 <div class="carousel-item">
-                    <img src="image/istockphoto-658446924-612x612.jpg" class="d-block w-100" alt="...">
+                    <img src="public/images/istockphoto-658446924-612x612.jpg" class="d-block w-100" alt="...">
                     <h5 class="card-title text-center mt-4 mb-4">Praia do Gigi, Quinta do lago</h5>
                     <p class="card-text pb-4 ">Joli paysage au Portugal.
                         Si vous aimez la tranquillité, cette plage est pour vous. Vous devez traverser à pied un pont
@@ -41,7 +41,7 @@ ob_start(); ?>
                         Il y a un restaurant accessible sur cette plage ,e vue incroyable sur la mer.
                 </div>
                 <div class="carousel-item">
-                    <img src="image/portugal-Algarve.jpg" class="d-block w-100" alt="...">
+                    <img src="public/images/portugal-Algarve.jpg" class="d-block w-100" alt="...">
                     <h5 class="card-title text-center mt-4 mb-4">Praia do Gigi, Quinta do lago</h5>
                     <p class="card-text pb-4 ">Joli paysage au Portugal.
                         Si vous aimez la tranquillité, cette plage est pour vous. Vous devez traverser à pied un pont
@@ -69,10 +69,11 @@ ob_start(); ?>
                 <div class="col">
                     <div class="card h-100">
                         <div class="card-body">
-
+                            <p class="card-text text-center fw-bold"><?= $articles[$i]->getContent() ?></p>
+                            <img src="public/images/<?= $articles[$i]->getPicture() ?>" class="w-100 p-3" alt="Plage">
                             <h5 class="card-title text-center"><?= $articles[$i]->getTitle(); ?></h5>
-                            <img src="image/<?= $articles[$i]->getPicture() ?>" class="w-100 p-3" alt="Plage">
-                            <p class="card-text"><?= $articles[$i]->getContent() ?></p>
+
+
 
                         </div>
 

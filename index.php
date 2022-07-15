@@ -23,17 +23,19 @@ try {
                 require "views/accueil.view.php";
                 break;
             case "articles" :
-                if (empty($url[1])) {
+                if(empty($url[1])){
                     $articleController->displayArticles();
-                } else if ($url[1] === "a") {
-                    echo $articleController->displayArticles($url[2]);
-                } else if ($url[1] === "l") {
-                    echo "ajouter un article";
-                } else if ($url[1] === "m") {
-                    echo "modifie un article";
-                } else if ($url[1] === "s") {
-                    echo "supprimer un article";
-                } else {
+                } else if($url[1] === "l") {
+                    $articleController->displayArticle($url[2]);
+                } else if($url[1] === "a") {
+                   /* $articleController->ajoutLivre();*/
+                } else if($url[1] === "m") {
+                    echo "modifier un livre";
+                } else if($url[1] === "s") {
+                 /*   $articleController->suppressionLivre($url[2]);*/
+                } else if($url[1] === "av") {
+                    /*$articleController->ajoutLivreValidation();*/
+                }else {
                     throw new Exception("La page n'existe pas");
                 }
                 break;
