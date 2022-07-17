@@ -31,31 +31,105 @@ class Article
 
     }
 
+    /**
+     * @return mixed
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
 
-    public function getId(){return $this->id;}
+    /**
+     * @param mixed $id
+     */
+    public function setId($id): void
+    {
+        $this->id = $id;
+    }
 
-    public function setId($id){$this->id = $id;}
+    /**
+     * @return mixed
+     */
+    public function getPicture()
+    {
+        return $this->picture;
+    }
 
-    public function getPicture(){return $this->picture;}
+    /**
+     * @param mixed $picture
+     */
+    public function setPicture($picture): void
+    {
+        $this->picture = $picture;
+    }
 
-    public function setPicture($picture){$this->picture = $picture;}
+    /**
+     * @return mixed
+     */
+    public function getTitle()
+    {
+        return $this->title;
+    }
 
-    public function getTitle(){return $this->title;}
+    /**
+     * @param mixed $title
+     */
+    public function setTitle($title): void
+    {
+        $this->title = $title;
+    }
 
-    public function setTitle($title){$this->title = $title;}
+    /**
+     * @return mixed
+     */
+    public function getContent()
+    {
+        return $this->content;
+    }
 
-    public function getContent(){return $this->content;}
+    /**
+     * @param mixed $content
+     */
+    public function setContent($content): void
+    {
+        $this->content = $content;
+    }
 
-    public function setContent($content){$this->content = $content;}
+    /**
+     * @return mixed
+     */
+    public function getCreated()
+    {
+        return $this->created;
+    }
 
-    public function getCreated(){return $this->created;}
+    /**
+     * @param mixed $created
+     */
+    public function setCreated($created): void
+    {
+        $this->created = $created;
+    }
 
-     public function setCreated($created){$this->created = $created;}
+    /**
+     * @return mixed
+     */
+    public function getUpdate()
+    {
+        return $this->update;
+    }
 
-    public function getUpdate(){ return $this->update;}
+    /**
+     * @param mixed $update
+     */
+    public function setUpdate($update): void
+    {
+        $this->update = $update;
+    }
 
-    public function setUpdate($update){$this->update = $update;}
-
+    /**
+     * @return mixed
+     */
     public function getSlug()
     {
         return $this->slug;
@@ -64,7 +138,7 @@ class Article
     /**
      * @param mixed $slug
      */
-    public function setSlug($slug)
+    public function setSlug($slug): void
     {
         $this->slug = $slug;
     }
@@ -80,7 +154,7 @@ class Article
     /**
      * @param mixed $first_name
      */
-    public function setFirstName($first_name)
+    public function setFirstName($first_name): void
     {
         $this->first_name = $first_name;
     }
@@ -96,7 +170,7 @@ class Article
     /**
      * @param mixed $last_name
      */
-    public function setLastName($last_name)
+    public function setLastName($last_name): void
     {
         $this->last_name = $last_name;
     }

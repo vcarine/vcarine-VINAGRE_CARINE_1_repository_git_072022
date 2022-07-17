@@ -23,7 +23,7 @@ ob_start(); ?>
         <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="public/images/Ponta-da-Piedade-Lagos.jpg" class="d-block w-100" alt="plage Portugal">
+                    <img src="image/Ponta-da-Piedade-Lagos.jpg" class="d-block w-100" alt="plage Portugal">
                     <h5 class="card-title text-center mt-4 mb-4">Ponte da Piedade, Lagos </h5>
                     <p class="card-text pb-4">Ponta da Piedade se définie par ses falaises creusées dans la roche qui
                         abritent des tunnels naturels et des cavernes secrètes. Ces falaises de couleur doré contrastent
@@ -33,7 +33,7 @@ ob_start(); ?>
                         Batata.. </p>
                 </div>
                 <div class="carousel-item">
-                    <img src="public/images/istockphoto-658446924-612x612.jpg" class="d-block w-100" alt="...">
+                    <img src="image/istockphoto-658446924-612x612.jpg" class="d-block w-100" alt="...">
                     <h5 class="card-title text-center mt-4 mb-4">Praia do Gigi, Quinta do lago</h5>
                     <p class="card-text pb-4 ">Joli paysage au Portugal.
                         Si vous aimez la tranquillité, cette plage est pour vous. Vous devez traverser à pied un pont
@@ -41,7 +41,7 @@ ob_start(); ?>
                         Il y a un restaurant accessible sur cette plage ,e vue incroyable sur la mer.
                 </div>
                 <div class="carousel-item">
-                    <img src="public/images/portugal-Algarve.jpg" class="d-block w-100" alt="...">
+                    <img src="image/portugal-Algarve.jpg" class="d-block w-100" alt="...">
                     <h5 class="card-title text-center mt-4 mb-4">Praia do Gigi, Quinta do lago</h5>
                     <p class="card-text pb-4 ">Joli paysage au Portugal.
                         Si vous aimez la tranquillité, cette plage est pour vous. Vous devez traverser à pied un pont
@@ -69,21 +69,16 @@ ob_start(); ?>
                 <div class="col">
                     <div class="card h-100">
                         <div class="card-body">
-                            <p class="card-text text-center"><?= $articles[$i]->getContent() ?></p>
-                            <img src="public/images/<?= $articles[$i]->getPicture() ?>" class="w-100 p-3" alt="Plage">
-                            <a class="card-title text-center"><a href="<?URL?> articles/l/"<?= $articles[$i]->getTitle(); ?>></a><?= $articles[$i]->getTitle(); ?></a></h5>
+
+                            <h5 class="card-title text-center"><?= $articles[$i]->getTitle(); ?></h5>
+                            <img src="image/<?= $articles[$i]->getPicture() ?>" class="w-100 p-3" alt="Plage">
+                            <p class="card-text"><?= $articles[$i]->getContent() ?></p>
 
                         </div>
 
                         <div class="card-body text-center">
-                            <button class="btn btn-info text-center" target="_blank" >Modifier</a></button>
-                            <button class="btn btn-success text-center" target="_blank" >Supprimer</a></button>
-                            <button class="btn btn-warning text-center" target="_blank" >Ajouter</a></button>
+                            <a href="" class="btn btn-info text-center" target="_blank" ">En savoir plus</a>
                         </div>
-                        <form method="POST" action="<?= URL ?>livres/s/<?= $articles[$i]->getId(); ?>"
-                              onSubmit="return confirm('Voulez-vous vraiment supprimer l'article' ?');">
-
-                        </form>
 
                     </div>
 
@@ -102,7 +97,7 @@ ob_start(); ?>
 
 <?php
 $content = ob_get_clean();
-$title = "Les articles";
+
 require "template.php";
 ?>
 

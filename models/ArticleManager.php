@@ -2,21 +2,24 @@
 
 namespace App\models;
 
-use PDO;
+use \PDO;
 
 class ArticleManager extends DbManager
 {
-    private $articles; // tableau article
+    private $articles;
 
-    public function addArticle($article)
+    public function addArticles($article)
     {
         $this->articles[] = $article;
     }
+
 
     public function getArticles()
     {
         return $this->articles;
     }
+
+
 
     public function loadingArticles()
     {
@@ -29,20 +32,11 @@ class ArticleManager extends DbManager
         $req->closeCursor();
 
         foreach ($articlesAll as $article) {
-            $l = new Article($article['id'], $article['picture'], $article['content'], $article['title'], $article['created'], $article['update'], $article['slug'], $article['first_name'], $article['last_name']);
-            $this->addArticle($l);
+            $a = new Article($article['id'], $article['picture'], $article['content'], $article['title'], $article['created'], $article['update'], $article['slug'], $article['first_name'], $article['last_name']);
+            $this->addArticles($a);
         }
     }
 
-    public function getArticleById($id)
-    {
-        for ($i = 0; $i < count($this->articles); $i++)
-        {
-            if ($this->articles[$i]->getId() === $id)
-            {
-                return $this->articles[$i];
-            }
-        }
-    }
+
 }
 
