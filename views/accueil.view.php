@@ -8,7 +8,7 @@
                 <div class="row">
                     <div class="col-lg-5">
                         <div class="portrait text-center col-lg-5 ">
-                            <img src="../image/Maphoto.jpg" class="rounded-circle" alt="photo img">
+                            <img src="public/images/Maphoto.jpg" class="rounded-circle" alt="photo img">
                         </div>
                         <p class="text-animation"></p>
                     </div>
