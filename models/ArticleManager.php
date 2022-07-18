@@ -22,24 +22,31 @@ class ArticleManager extends DbManager
     {
         $req = $this->getBdd()->prepare("SELECT * FROM articles");
         $req->execute();
-        $articlesAll = $req->fetchAll(PDO::FETCH_ASSOC);
+        $articles = $req->fetchAll(PDO::FETCH_ASSOC);
         /*       echo"<pre>";
                print_r($articles);
                echo"</pre>";*/
         $req->closeCursor();
 
-        foreach ($articlesAll as $article) {
-            $a = new Article($article['id'], $article['picture'], $article['content'], $article['title'], $article['created'], $article['update'], $article['slug'], $article['first_name'], $article['last_name']);
+        foreach ($articles as $article) {
+            $a = new Article($article['id'], $article['image_link'], $article['content'], $article['title'], $article['username']);
             $this->addArticles($a);
         }
     }
 
-    public function getArticleById($id)
+    public function showArticle($id)
     {
-        for ($i=0; $i < count($this->articles); $i++){
-            if ($this->articles[$i]->getId() === $id){
-                return $this->articles[$i];
-            }
+        $request = $this->getBdd()->prepare('SELECT * FROM articles WHERE id = :id');
+        $request->bindParam(':id', $id);
+        $request->execute();
+
+        $articles = $request->fetchAll(PDO::FETCH_ASSOC);
+
+        $request->closeClosure();
+
+        foreach ($articles as $article) {
+            $a = new Article($article['id'], $article['image_link'], $article['content'], $article['title'], $article['username']);
+            $this->showArticle($a);
         }
     }
 

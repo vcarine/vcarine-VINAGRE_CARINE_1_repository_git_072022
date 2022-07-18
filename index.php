@@ -29,7 +29,7 @@ try {
                 } else if ($url[1] === "s") {
                    /* echo "afficher un article";*/
                     /*echo $url[2];*/
-                    echo $articleController->showArticle($url[2]);
+                $articleController->showArticle($url[2]);
                 } else if ($url[1] === "l") {
                     echo "ajouter un article";
                 } else if ($url[1] === "m") {

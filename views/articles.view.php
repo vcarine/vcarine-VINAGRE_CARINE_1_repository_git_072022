@@ -63,17 +63,17 @@ ob_start(); ?>
 
         <!--     card-->
         <div class="row row-cols-1 row-cols-md-3 g-4">
-            <?php
-            for ($i = 0; $i < count($articles); $i++) {
-                /*var_dump($articles);*/
-                ?>
+           <!-- --><?php
+/*/*            for ($i = 0; $i < count($articles); $i++) {
+                var_dump($articles);
+                */?>
                 <div class="col">
                     <div class="card h-100">
                         <div class="card-body">
 
-                            <p class="card-text text-center fw-bold"><a href="articles/s/<?= $articles[$i]->getId() ?>"><?= $articles[$i]->getContent() ?></p>
+                            <p class="card-text text-center fw-bold">Les plages</p>
 
-                            <img src="public/images/<?= $articles[$i]->getPicture() ?>" class="w-100 p-3" alt="Plage">
+                            <img src="public/images/istockphoto-658446924-612x612.jpg" class="w-100 p-3" alt="Plage">
 
                         </div>
 
@@ -84,7 +84,7 @@ ob_start(); ?>
                     </div>
 
                 </div>
-            <?php } ?>
+      <!--      --><?php /*} */?>
         </div>
 
 </section>
