@@ -6,7 +6,7 @@ use App\models\ArticleManager;
 
 class ArticlesController
 {
-    private $articleManager;
+    private ArticleManager $articleManager;
 
     public function __construct()
     {
@@ -14,17 +14,24 @@ class ArticlesController
         $this->articleManager->loadingArticles();
     }
 
-    public function displayArticles()
+    /**
+     * @return void
+     */
+    public function displayArticles(): void
+
     {
         $articles = $this->articleManager->getArticles();
-//    dd($articles);
         require "views/articles.view.php";
     }
 
-    public function showArticle($id)
+    /**
+     * @param int $id
+     *
+     * @return void
+     */
+    public function showArticle(int $id): void
     {
-        $article = $this->articleManager->getArticle($id);
-        dd($article);
+        $article = $this->articleManager->showArticle($id);
         require "views/show.article.view.php";
     }
 }

@@ -1,21 +1,22 @@
-<?php ob_start(); ?>
+<?php
 
+use App\models\Article;
+
+ob_start();
+/** @var Article $article */
+?>
     <div class="row">
         <div class="col-6">
-            <img src="<?= URL ?> public/images/<?= $article->getImage_link(); ?>" alt="article_show">
+            <img src="<?= URL?>/public/images/<?= $article->getImageLink() ?>" class="w-100 p-3" alt="Plage">
         </div>
         <div class="col-6">
-            <p>Titre : <?= $article->getTitle($url[2]); ?> </p>
-            <p>Contenu : <?= $article->getContent(); ?> </p>
-            <p>Auteur : <?= $article->getAuthor(); ?> </p>
+            <p><?= $article->getTitle(); ?> - <?= $article->getCreatedAt()->format('d/m/Y - H:i:s') ?></p>
+            <p><?= $article->getContent(); ?></p>
         </div>
-    </div
-
-
+    </div>
 <?php
 
 $content = ob_get_clean();
-
 require "template.php";
 
 ?>

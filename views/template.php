@@ -11,8 +11,7 @@
     <link rel="stylesheet" href="public/style.css">
     <!--    bootstrap -->
     <link rel="stylesheet" href="https://bootswatch.com/5/sandstone/bootstrap.min.css">
-    <!--    fontawesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/fontawesome.min.css">
+
 
 
 </head>

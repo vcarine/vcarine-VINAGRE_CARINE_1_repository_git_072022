@@ -2,43 +2,143 @@
 
 namespace App\models;
 
+use DateTime;
+
 class Article
 {
+    private int $id;
+    private string $image_link;
+    private string $title;
+    private string $content;
+    private string $author;
+    private DateTime $createdAt;
 
-    private $id;
-    private $image_link;
-    private $title;
-    private $content;
-    private $author;
-
-
-
-    public function __construct($id, $image_link, $title, $content, $author,)
+    /**
+     * @param int $id
+     * @param string $image_link
+     * @param string $title
+     * @param string $content
+     * @param string $author
+     * @param DateTime $createdAt
+     */
+    public function __construct(int $id, string $image_link, string $title, string $content, string $author, DateTime $createdAt)
     {
-        $this->id             = $id;
-        $this->image_link     = $image_link;
-        $this->title          = $title;
-        $this->content        = $content;
-        $this->author         = $author;
-
+        $this->id = $id;
+        $this->image_link = $image_link;
+        $this->title = $title;
+        $this->content = $content;
+        $this->author = $author;
+        $this->createdAt = $createdAt;
     }
-    public function getId(){return $this->id;}
-    public function setId($id){$this->id = $id;}
 
-    public function getTitle(){return $this->title;}
-    public function setTitle($title){$this->title = $title;}
+    /**
+     * @return int
+     */
+    public function getId(): int
+    {
+        return $this->id;
+    }
 
-    public function getImage_link(){return $this->image_link;}
-    public function setImage_link($image_link){$this->image_link = $image_link;}
+    /**
+     * @param int $id
+     * @return $this
+     */
+    public function setId(int $id): self
+    {
+        $this->id = $id;
 
-    public function getContent (){return $this->content ;}
-    public function setContent ($content ){$this->content  = $content ;}
+        return $this;
+    }
 
-    public function getAuthor (){return $this->author;}
-    public function setAuthor ($author ){$this->author = $author;}
+    /**
+     * @return string
+     */
+    public function getImageLink(): string
+    {
+        return $this->image_link;
+    }
 
+    /**
+     * @param string $image_link
+     * @return Article
+     */
+    public function setImageLink(string $image_link): Article
+    {
+        $this->image_link = $image_link;
+        return $this;
+    }
 
+    /**
+     * @return string
+     */
+    public function getTitle(): string
+    {
+        return $this->title;
+    }
 
+    /**
+     * @param string $title
+     * @return Article
+     */
+    public function setTitle(string $title): Article
+    {
+        $this->title = $title;
+        return $this;
+    }
 
+    /**
+     * @return string
+     */
+    public function getContent(): string
+    {
+        return $this->content;
+    }
+
+    /**
+     * @param string $content
+     * @return Article
+     */
+    public function setContent(string $content): Article
+    {
+        $this->content = $content;
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getAuthor(): string
+    {
+        return $this->author;
+    }
+
+    /**
+     * @param string $author
+     * @return Article
+     */
+    public function setAuthor(string $author): Article
+    {
+        $this->author = $author;
+        return $this;
+    }
+
+    /**
+     * @return DateTime
+     */
+    public function getCreatedAt(): DateTime
+    {
+        return $this->createdAt;
+    }
+
+    /**
+     * @param DateTime $createdAt
+     * @return Article
+     */
+    public function setCreatedAt(DateTime $createdAt): Article
+    {
+        $this->createdAt = $createdAt;
+
+        return $this;
+    }
 }
 

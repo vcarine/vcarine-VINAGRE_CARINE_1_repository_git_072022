@@ -23,7 +23,7 @@ ob_start(); ?>
         <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="public/images/Ponta-da-Piedade-Lagos.jpg" class="d-block w-100" alt="plage Portugal">
+                    <img src="../public/images/Ponta-da-Piedade-Lagos.jpg" class="d-block w-100" alt="plage Portugal">
                     <h5 class="card-title text-center mt-4 mb-4">Ponte da Piedade, Lagos </h5>
                     <p class="card-text pb-4">Ponta da Piedade se définie par ses falaises creusées dans la roche qui
                         abritent des tunnels naturels et des cavernes secrètes. Ces falaises de couleur doré contrastent
@@ -37,8 +37,8 @@ ob_start(); ?>
                     <h5 class="card-title text-center mt-4 mb-4">Praia do Gigi, Quinta do lago</h5>
                     <p class="card-text pb-4 ">Joli paysage au Portugal.
                         Si vous aimez la tranquillité, cette plage est pour vous. Vous devez traverser à pied un pont
-                        qui traverse la rivière protégée du parc naturelle Ria Formosa,
-                        Il y a un restaurant accessible sur cette plage ,e vue incroyable sur la mer.
+                        qui traverse la rivière protégée du parc naturelle Ria Formosa.
+
                 </div>
                 <div class="carousel-item">
                     <img src="public/images/portugal-Algarve.jpg" class="d-block w-100" alt="...">
@@ -46,7 +46,6 @@ ob_start(); ?>
                     <p class="card-text pb-4 ">Joli paysage au Portugal.
                         Si vous aimez la tranquillité, cette plage est pour vous. Vous devez traverser à pied un pont
                         qui traverse la rivière protégée du parc naturelle Ria Formosa,
-                        Il y a un restaurant accessible sur cette plage ,e vue incroyable sur la mer.
                 </div>
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
@@ -75,13 +74,13 @@ ob_start(); ?>
 <!--                            --><?php
 //                            dd($articles);
 //                            ?>
-                            <img src="public/images/<?= $articles[$i]->getImage_link() ?>" class="w-100 p-3" alt="Plage">
+                            <img src="public/images/<?= $articles[$i]->getImageLink() ?>" class="w-100 p-3" alt="Plage">
                             <p class="card-text text-center fw-bold"><a  class="text-decoration-none" href="<?= URL ?>articles/s/<?= $articles[$i]->getId(); ?>"><?= $articles[$i]->getContent() ?></p>
 
                         </div>
 
                         <div class="card-body text-center">
-                            <a href="" class="btn btn-info text-center" target="_blank" ">En savoir plus</a>
+                            <a href="<?= URL?>article/s/<?= $articles[$i]->getId() ?>" class="btn btn-info text-center" target="_blank">En savoir plus</a>
                         </div>
 
                     </div>

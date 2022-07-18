@@ -2,62 +2,80 @@
 
 namespace App\models;
 
-
-use \PDO;
+use DateTime;
+use Exception;
+use PDO;
 
 class ArticleManager extends DbManager
 {
-    private $articles; //tableau de livre
+    private array $articles;
 
-    public function addArticles($article)
+    /**
+     * @param Article $article
+     * @return void
+     */
+    public function addArticles(Article $article): void
     {
         $this->articles[] = $article;
     }
 
-    public function getArticles()
+    /**
+     * @return array
+     */
+    public function getArticles(): array
     {
         return $this->articles;
     }
 
-
+    /**
+     * @throws Exception
+     */
     public function loadingArticles()
     {
         $req = $this->getBdd()->prepare("SELECT * FROM articles");
         $req->execute();
         $articles = $req->fetchAll(PDO::FETCH_ASSOC);
-//        var_dump($articles);
-        /*       echo"<pre>";
-               print_r($articles);
-               echo"</pre>";*/
         $req->closeCursor();
 
-      foreach ($articles as $article) {
-            $a = new Article($article['id'], $article['image_link'], $article['content'], $article['title'],  $article['author']);
+        foreach ($articles as $article) {
+            $a = $this->createdObjectArticle($article);
             $this->addArticles($a);
         }
-
     }
 
-    public function showArticle($id)
+    /**
+     * @param int $id
+     *
+     * @return Article
+     *
+     * @throws Exception
+     */
+    public function showArticle(int $id): Article
     {
-
         $request = $this->getBdd()->prepare('SELECT * FROM articles WHERE id = :id');
-
         $request->bindParam(':id', $id);
+        $request->execute();
+        $article = $request->fetch(PDO::FETCH_ASSOC);
 
-        $articles = $request->execute()->fetchOne();
-
-        $request->closeClosure();
-
-        foreach ($articles as $article) {
-            $s = new Article($article['id'], $article['image_link'], $article['content'], $article['title'],  $article['author']);
-            $this->showArticle($s);
-
-        }
+        return $this->createdObjectArticle($article);
     }
 
-
+    /**
+     * @param array $article
+     *
+     * @return Article
+     *
+     * @throws Exception
+     */
+    private function createdObjectArticle(array $article): Article
+    {
+        return new Article(
+            $article['id'],
+            $article['image_link'],
+            $article['content'],
+            $article['title'],
+            $article['author'],
+            new DateTime($article['createdAt'])
+        );
+    }
 }
-
-
-
