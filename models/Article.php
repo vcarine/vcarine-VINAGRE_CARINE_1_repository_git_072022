@@ -1,178 +1,43 @@
 <?php
 
+namespace App\models;
+
 class Article
 {
 
     private $id;
-    private $picture;
+    private $image_link;
     private $title;
     private $content;
-    private $created;
-    private $update;
-    private $slug;
-    private $first_name;
-    private $last_name;
+    private $user_name;
 
 
 
-    public function __construct($id, $picture, $title, $content, $created, $update, $slug, $first_name, $last_name)
+    public function __construct($id, $image_link, $title, $content,$user_name)
     {
         $this->id             = $id;
-        $this->picture        = $picture;
+        $this->image_link     = $image_link;
         $this->title          = $title;
         $this->content        = $content;
-        $this->created        = $created;
-        $this->update         = $update;
-        $this->slug           = $slug;
-        $this->first_name     = $first_name;
-        $this->last_name      = $last_name;
+        $this->user_name     = $user_name;
+
 
     }
 
-    /**
-     * @return mixed
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
+    public function getId(){return $this->id;}
+    public function setId($id){$this->id = $id;}
 
-    /**
-     * @param mixed $id
-     */
-    public function setId($id): void
-    {
-        $this->id = $id;
-    }
+    public function getTitle(){return $this->title;}
+    public function setTitle($title){$this->title = $title;}
 
-    /**
-     * @return mixed
-     */
-    public function getPicture()
-    {
-        return $this->picture;
-    }
+    public function getImage_link(){return $this->image_link;}
+    public function setImage_link($image_link){$this->image_link = $image_link;}
 
-    /**
-     * @param mixed $picture
-     */
-    public function setPicture($picture): void
-    {
-        $this->picture = $picture;
-    }
+    public function getContent (){return $this->content ;}
+    public function setContent ($content ){$this->content  = $content ;}
 
-    /**
-     * @return mixed
-     */
-    public function getTitle()
-    {
-        return $this->title;
-    }
-
-    /**
-     * @param mixed $title
-     */
-    public function setTitle($title): void
-    {
-        $this->title = $title;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getContent()
-    {
-        return $this->content;
-    }
-
-    /**
-     * @param mixed $content
-     */
-    public function setContent($content): void
-    {
-        $this->content = $content;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getCreated()
-    {
-        return $this->created;
-    }
-
-    /**
-     * @param mixed $created
-     */
-    public function setCreated($created): void
-    {
-        $this->created = $created;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getUpdate()
-    {
-        return $this->update;
-    }
-
-    /**
-     * @param mixed $update
-     */
-    public function setUpdate($update): void
-    {
-        $this->update = $update;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getSlug()
-    {
-        return $this->slug;
-    }
-
-    /**
-     * @param mixed $slug
-     */
-    public function setSlug($slug): void
-    {
-        $this->slug = $slug;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getFirstName()
-    {
-        return $this->first_name;
-    }
-
-    /**
-     * @param mixed $first_name
-     */
-    public function setFirstName($first_name): void
-    {
-        $this->first_name = $first_name;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getLastName()
-    {
-        return $this->last_name;
-    }
-
-    /**
-     * @param mixed $last_name
-     */
-    public function setLastName($last_name): void
-    {
-        $this->last_name = $last_name;
-    }
-
+    public function getUser_name (){return $this->user_name;}
+    public function setUser_name  ($user_name){$this->user_name = $user_name  ;}
 
 }
 
