@@ -12,21 +12,19 @@ class ArticlesController
     {
         $this->articleManager = new ArticleManager;
         $this->articleManager->loadingArticles();
-
     }
 
-   public function displayArticles()
+    public function displayArticles()
     {
         $articles = $this->articleManager->getArticles();
-/*     var_dump($articles);*/
+//    dd($articles);
         require "views/articles.view.php";
     }
-    public function showArticle(){
-        $article = $this->articleManager->getArticles();
-        var_dump($article);
+
+    public function showArticle($id)
+    {
+        $article = $this->articleManager->getArticle($id);
+        dd($article);
         require "views/show.article.view.php";
     }
-  }
-
-
-
+}

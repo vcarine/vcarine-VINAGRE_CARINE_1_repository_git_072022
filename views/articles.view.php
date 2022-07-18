@@ -63,17 +63,20 @@ ob_start(); ?>
 
         <!--     card-->
         <div class="row row-cols-1 row-cols-md-3 g-4">
-           <!-- --><?php
-/*/*            for ($i = 0; $i < count($articles); $i++) {
-                var_dump($articles);
-                */?>
+    <?php
+
+            for ($i = 0; $i < count($articles); $i++) {
+                ?>
                 <div class="col">
                     <div class="card h-100">
                         <div class="card-body">
 
-                            <p class="card-text text-center fw-bold">Les plages</p>
-
-                            <img src="public/images/istockphoto-658446924-612x612.jpg" class="w-100 p-3" alt="Plage">
+                          <!--  <h5 class="card-title text-center"><?/*= $articles[$i]->getTitle(); */?></h5>-->
+<!--                            --><?php
+//                            dd($articles);
+//                            ?>
+                            <img src="public/images/<?= $articles[$i]->getImage_link() ?>" class="w-100 p-3" alt="Plage">
+                            <p class="card-text text-center fw-bold"><a  class="text-decoration-none" href="<?= URL ?>articles/s/<?= $articles[$i]->getId(); ?>"><?= $articles[$i]->getContent() ?></p>
 
                         </div>
 
@@ -84,21 +87,19 @@ ob_start(); ?>
                     </div>
 
                 </div>
-      <!--      --><?php /*} */?>
-        </div>
+            <?php } ?>
 
 </section>
 
 <!--section footer-->
-<footer class="bg-light text-center py-3 my-4 border-top">
-    <a href="#" class="mb-3 mb-md-0 text-muted text-decoration-none lh-1"> Tout Droits réservés © 2022 Carine Vinagre,
-        Inc</a>
+<footer class="bg-light text-center my-auto p-4 ">
+    <p class="mb-3 mb-md-0 text-muted text-decoration-none lh-1 fw-bold"> Tout Droits réservés © 2022 Carine Vinagre</p>
+    <a href="mailto:" class="mb-3 mb-md-0 text-decoration-none fw-bold">vinagre.carine@gmail.com</a>
 </footer>
 
 
 <?php
 $content = ob_get_clean();
-
 require "template.php";
 ?>
 

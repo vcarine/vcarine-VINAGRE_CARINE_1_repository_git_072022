@@ -9,21 +9,19 @@ class Article
     private $image_link;
     private $title;
     private $content;
-    private $user_name;
+    private $author;
 
 
 
-    public function __construct($id, $image_link, $title, $content,$user_name)
+    public function __construct($id, $image_link, $title, $content, $author,)
     {
         $this->id             = $id;
         $this->image_link     = $image_link;
         $this->title          = $title;
         $this->content        = $content;
-        $this->user_name     = $user_name;
-
+        $this->author         = $author;
 
     }
-
     public function getId(){return $this->id;}
     public function setId($id){$this->id = $id;}
 
@@ -36,8 +34,11 @@ class Article
     public function getContent (){return $this->content ;}
     public function setContent ($content ){$this->content  = $content ;}
 
-    public function getUser_name (){return $this->user_name;}
-    public function setUser_name  ($user_name){$this->user_name = $user_name  ;}
+    public function getAuthor (){return $this->author;}
+    public function setAuthor ($author ){$this->author = $author;}
+
+
+
 
 }
 

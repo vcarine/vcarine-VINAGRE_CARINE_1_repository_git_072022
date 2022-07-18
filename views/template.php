@@ -28,10 +28,10 @@
         <div class="collapse navbar-collapse  " id="navbarColor01">
             <ul class="navbar-nav w-100 d-flex justify-content-start ">
                 <li class="nav-item">
-                    <a class="nav-link active" href="accueil">Accueil</a>
+                    <a class="nav-link active" href="<?= URL?>accueil">Accueil</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="articles">Article</a>
+                    <a class="nav-link" href="<?= URL?>articles">Article</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Contact</a>
