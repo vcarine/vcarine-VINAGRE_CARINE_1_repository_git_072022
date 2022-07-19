@@ -12,3 +12,16 @@ body {
 .text-animation{
     margin: 50px 0 0 80px;
 }
+#form .container #form-row #form-column #form-box {
+    margin-top: 120px;
+    max-width: 600px;
+    height: 320px;
+    border: 1px solid #9C9C9C;
+    background-color: #EAEAEA;
+}
+#form .container #form-row #form-column #form-box #form-form {
+    padding: 20px;
+}
+#form .container #form-row #form-column #form-box #form-form  {
+    margin-top: -85px;
+}

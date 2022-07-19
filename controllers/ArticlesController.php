@@ -34,4 +34,15 @@ class ArticlesController
         $article = $this->articleManager->showArticle($id);
         require "views/show.article.view.php";
     }
+    /**
+     * @param int $id
+     *
+     * @return void
+     */
+    public function addArticle(): void
+    {
+        require "views/add.article.view.php";
+    }
+
+
 }

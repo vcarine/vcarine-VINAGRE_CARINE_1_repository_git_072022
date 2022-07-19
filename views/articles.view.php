@@ -23,7 +23,7 @@ ob_start(); ?>
         <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="../public/images/Ponta-da-Piedade-Lagos.jpg" class="d-block w-100" alt="plage Portugal">
+                    <img src="public/images/Ponta-da-Piedade-Lagos.jpg" class="d-block w-100" alt="plage Portugal">
                     <h5 class="card-title text-center mt-4 mb-4">Ponte da Piedade, Lagos </h5>
                     <p class="card-text pb-4">Ponta da Piedade se définie par ses falaises creusées dans la roche qui
                         abritent des tunnels naturels et des cavernes secrètes. Ces falaises de couleur doré contrastent
@@ -70,17 +70,16 @@ ob_start(); ?>
                     <div class="card h-100">
                         <div class="card-body">
 
-                          <!--  <h5 class="card-title text-center"><?/*= $articles[$i]->getTitle(); */?></h5>-->
-<!--                            --><?php
-//                            dd($articles);
-//                            ?>
                             <img src="public/images/<?= $articles[$i]->getImageLink() ?>" class="w-100 p-3" alt="Plage">
-                            <p class="card-text text-center fw-bold"><a  class="text-decoration-none" href="<?= URL ?>articles/s/<?= $articles[$i]->getId(); ?>"><?= $articles[$i]->getContent() ?></p>
+                            <p class="card-text text-center fw-bold"><a  class="text-decoration-none" href="<?= URL ?>article/s/<?= $articles[$i]->getId(); ?>"><?= $articles[$i]->getContent() ?></a></p>
 
                         </div>
 
                         <div class="card-body text-center">
-                            <a href="<?= URL?>article/s/<?= $articles[$i]->getId() ?>" class="btn btn-info text-center" target="_blank">En savoir plus</a>
+
+                            <a href="<?= URL?>article/s/<?= $articles[$i]->getId() ?>" class="btn btn-primary text-center m-1" target="_blank">Modifier</a>
+                            <a href="<?= URL?>article/s/<?= $articles[$i]->getId() ?>" class="btn btn-success text-center m-1" target="_blank">Supprimer</a>
+                            <a href="<?= URL?>article/a/<?= $articles[$i]->getId() ?>" class="btn btn-warning text-center m-1" target="_blank">Ajouter</a>
                         </div>
 
                     </div>
@@ -91,11 +90,14 @@ ob_start(); ?>
 </section>
 
 <!--section footer-->
-<footer class="bg-light text-center my-auto p-4 ">
-    <p class="mb-3 mb-md-0 text-muted text-decoration-none lh-1 fw-bold"> Tout Droits réservés © 2022 Carine Vinagre</p>
-    <a href="mailto:" class="mb-3 mb-md-0 text-decoration-none fw-bold">vinagre.carine@gmail.com</a>
-</footer>
 
+<footer class="bg-light text-center my-auto p-4 ">
+    <span class="mb-3 mb-md-0 text-muted text-decoration-none lh-1 fw-bold">Tout Droits réservés © 2022 Carine Vinagre</span>
+    <div id="contact">
+        <p> Si vous voulez me contacter, n'hésitez pas à m'envoyer un email à <a
+                    href="mailto:vcarine.dev@gmail.com"><b class="mail">vcarine.dev@gmail.com</b></a></p>
+    </div>
+</footer>
 
 <?php
 $content = ob_get_clean();

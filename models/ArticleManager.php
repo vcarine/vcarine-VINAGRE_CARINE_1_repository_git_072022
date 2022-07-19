@@ -78,4 +78,21 @@ class ArticleManager extends DbManager
             new DateTime($article['createdAt'])
         );
     }
+    /**
+     * @param int $id
+     *
+     * @return Article
+     *
+     * @throws Exception
+     */
+    public function addArticle(int $id): Article
+    {
+        $request = $this->getBdd()->prepare('SELECT * FROM articles WHERE id = :id');
+        $request->bindParam(':id', $id);
+        $request->execute();
+        $article = $request->fetch(PDO::FETCH_ASSOC);
+
+        return $this->createdObjectArticle($article);
+    }
+
 }
