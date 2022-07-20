@@ -45,5 +45,35 @@ try {
     echo $e->getMessage();
 }
 
+// On vérifie que l'on a pas de paramètres get dans l'url.
+//Si c'est le cas, on redirige vers la page d'acceuil de notre application
+if(!isset($_GET['controller']) || !isset($_GET['action'])){
+    // Redirection vers la homepage
+    header('Location: index.php?controller=article&action=article');
+}
+
+// Je regarde le controlleur. Si c'est un appel du securityController,
+// Je cré un nouvel objet SecurityController
+if ($_GET['controller'] == 'security') {
+
+    $security = new App\controllers\SecurityController();
+    // Si mon parametre get action est égal à Login,
+    // j'appel la fonction login de mon controlleur Security
+    if( $_GET['action'] == 'login'){
+        $security->login();
+    }
+    // Ici j'appel la fonction register de mon objet SecurityController
+    if ($_GET['action'] == 'register'){
+        $security->register();
+    }
+    // J'appel la fonction logout de mon SecurityController
+    if ($_GET['action'] == 'logout'){
+        $security->logout();
+    }
+
+}
+
+
+
 
 
