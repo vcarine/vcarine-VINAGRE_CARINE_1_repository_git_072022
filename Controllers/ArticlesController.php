@@ -3,11 +3,15 @@
 namespace App\controllers;
 
 use App\models\ArticleManager;
+use Exception;
 
 class ArticlesController
 {
     private ArticleManager $articleManager;
 
+    /**
+     * @throws Exception
+     */
     public function __construct()
     {
         $this->articleManager = new ArticleManager;
@@ -28,27 +32,30 @@ class ArticlesController
      * @param int $id
      *
      * @return void
+     *
+     * @throws Exception
      */
     public function showArticle(int $id): void
     {
         $article = $this->articleManager->showArticle($id);
         require "Views/Articles/show.article.view.php";
     }
+
     /**
-     * @param int $id
-     *
      * @return void
      */
     public function addArticle(): void
     {
         require "Views/Articles/add.article.view.php";
     }
+
     /**
      * @param int $id
      *
      * @return void
+     *
+     * @throws Exception
      */
-//    Public function deleteArticle(Article $article): void
     public function deleteArticle( int $id): void
     {
         $article = $this->articleManager->deleteArticle($id);
@@ -64,5 +71,4 @@ class ArticlesController
     {
         require "Views/Articles/edit.article.view.php";
     }
-
 }

@@ -1,26 +1,35 @@
 <?php
 
 use App\controllers\ArticlesController;
+use App\controllers\Security\SecurityController;
 
 include 'vendor/autoload.php';
 
-session_start();
+define('URL', str_replace("index.php", "", (isset($_SERVER['HTTPS']) ? "https" : "http") . "://" . $_SERVER['HTTP_HOST'] . $_SERVER['PHP_SELF']));
 
-define('URL', str_replace("index.php", "", (isset($_SERVER['HTTPS']) ? "https" : "http") .
-    "://" . $_SERVER['HTTP_HOST'] . $_SERVER['PHP_SELF']));
-
-
-$articles = new ArticlesController();
+//$articles = new ArticlesController();
 try {
     if (empty($_GET['page'])) {
         require "Views/accueil.view.php";
     } else {
         $url = explode("/", filter_var($_GET['page']), FILTER_SANITIZE_URL);
-        switch ($url[0]) {
+
+        match ($url[0]) {
+            'accueil' => require "Views/accueil.view.php",
+            'articles' => getDisplayArticle(),
+            'article' => actionArticle($url[1], $url[2]),
+            'security' => security($url[1]),
+            default => throw new Exception("La page n'existe pas"),
+        };
+
+
+
+
+        /*switch ($url[0]) {
             case 'accueil' :
                 require "Views/accueil.view.php";
                 break;
-            case 'Articles' :
+            case 'articles' :
                 $articles->displayArticles();
                 break;
             case 'article':
@@ -36,44 +45,74 @@ try {
                     throw new Exception("La page n'existe pas");
                 }
                 break;
+            case 'security':
+                $controller = new SecurityController();
+
+                if ($url[1] == 'login') {
+                    $controller->login();
+                }
+
+                if ($url[1] == 'register') {
+                    $controller->register();
+                }
+                break;
             default :
                 throw new Exception("La page n'existe pas");
-        }
+        }*/
     }
 } catch
 (Exception $e) {
     echo $e->getMessage();
 }
 
-// On vérifie que l'on a pas de paramètres get dans l'url.
-//Si c'est le cas, on redirige vers la page d'acceuil de notre application
-if(!isset($_GET['controller']) || !isset($_GET['action'])){
-    // Redirection vers la homepage
-    header('Location: index.php?controller=article&action=article');
+/**
+ * @return void
+ */
+function getDisplayArticle(): void
+{
+    $articles = new ArticlesController();
+    $articles->displayArticles();
 }
 
-// Je regarde le controlleur. Si c'est un appel du securityController,
-// Je cré un nouvel objet SecurityController
-if ($_GET['controller'] == 'security') {
+/**
+ * @param string $parameter
+ * @param int $id
+ *
+ * @return void
+ *
+ * @throws Exception
+ */
+function actionArticle(string $parameter, int $id): void
+{
+    $articles = new ArticlesController();
 
-    $security = new App\controllers\SecurityController();
-    // Si mon parametre get action est égal à Login,
-    // j'appel la fonction login de mon controlleur Security
-    if( $_GET['action'] == 'login'){
-        $security->login();
+    if ($parameter === "s") {
+        $articles->showArticle($id);
+    } else if ($parameter === "a") {
+        $articles->addArticle();
+    } else if ($parameter === "e") {
+        $articles->editArticle();
+    } else if ($parameter === "d") {
+        $articles->deleteArticle($id);
+    } else {
+        throw new Exception("La page n'existe pas");
     }
-    // Ici j'appel la fonction register de mon objet SecurityController
-    if ($_GET['action'] == 'register'){
-        $security->register();
-    }
-    // J'appel la fonction logout de mon SecurityController
-    if ($_GET['action'] == 'logout'){
-        $security->logout();
-    }
-
 }
 
+/**
+ * @param string $parameter
+ *
+ * @return void
+ */
+function security(string $parameter): void
+{
+    $controller = new SecurityController();
 
+    if ($parameter === 'login') {
+        $controller->login();
+    }
 
-
-
+    if ($parameter === 'register') {
+        $controller->register();
+    }
+}

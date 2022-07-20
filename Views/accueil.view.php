@@ -1,4 +1,3 @@
-
 <?php ob_start();?>
 
 <div class="  d-flex flex-column  mt-5">
@@ -41,14 +40,8 @@
     </div
 
 </div>
-<!--section footer-->
-<footer class="bg-light text-center my-auto p-4 ">
-    <p class="mb-3 mb-md-0 text-muted text-decoration-none lh-1 fw-bold"> Tout Droits réservés © 2022 Carine Vinagre</p>
-    <a href="mailto:" class="mb-3 mb-md-0 text-decoration-none fw-bold">vinagre.carine@gmail.com</a>
-</footer>
 
 <?php
 $content = ob_get_clean();
-
 require "template.php";
 ?>

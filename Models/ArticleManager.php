@@ -5,7 +5,7 @@ namespace App\models;
 use DateTime;
 use Exception;
 use PDO;
-use App\models\Article;
+
 
 class ArticleManager extends DbManager
 {
@@ -80,20 +80,25 @@ class ArticleManager extends DbManager
         );
     }
     /**
-     * @param int $id
-     *
-     * @return Article
-     *
      * @throws Exception
      */
-    public function addArticle(int $id): /*?*/Article
+    public function addArticle()
     {
-        $request = $this->getBdd()->prepare('SELECT * FROM Articles WHERE id = :id');
-        $request->bindParam(':id', $id);
-        $request->execute();
-        $article = $request->fetch(PDO::FETCH_ASSOC);
+        // recupérer les infos du form
+        $imageLink = '';
+        $content = '';
+        $title = '';
+        $author = '';
 
-        return $this->createdObjectArticle($article);
+        
+
+        $request = $this->getBdd()->prepare('INSERT INTO articles (image_link, content, title, author) VALUES (:image_link, :content, :title, :author)');
+        $request->bindParam(':image_link', $imageLink);
+        $request->bindParam(':content', $content);
+        $request->bindParam(':title', $title);
+        $request->bindParam(':author', $author);
+        $request->execute();
+
     }
     /**
      * @param int $id
