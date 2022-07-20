@@ -2,7 +2,6 @@
 
 namespace App\controllers;
 
-use App\models\Article;
 use App\models\ArticleManager;
 
 class ArticlesController
@@ -22,7 +21,7 @@ class ArticlesController
 
     {
         $articles = $this->articleManager->getArticles();
-        require "views/articles.view.php";
+        require "Views/articles/articles.view.php";
     }
 
     /**
@@ -33,7 +32,7 @@ class ArticlesController
     public function showArticle(int $id): void
     {
         $article = $this->articleManager->showArticle($id);
-        require "views/show.article.view.php";
+        require "Views/articles/show.article.view.php";
     }
     /**
      * @param int $id
@@ -42,14 +41,14 @@ class ArticlesController
      */
     public function addArticle(): void
     {
-        require "views/articles/add.article.view.php";
+        require "Views/articles/add.article.view.php";
     }
     /**
      * @param int $id
      *
      * @return void
      */
-//    public function deleteArticle(Article $article): void
+//    Public function deleteArticle(Article $article): void
     public function deleteArticle( int $id): void
     {
         $article = $this->articleManager->deleteArticle($id);
@@ -63,7 +62,7 @@ class ArticlesController
      */
     public function editArticle(): void
     {
-        require "views/edit.article.view.php";
+        require "Views/articles/edit.article.view.php";
     }
 
 }

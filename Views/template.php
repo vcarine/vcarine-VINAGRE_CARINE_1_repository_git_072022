@@ -8,7 +8,7 @@
     <title></title>
 
     <!--    css-->
-    <link rel="stylesheet" href="public/style.css">
+    <link rel="stylesheet" href="../Public/style.css">
     <!--    bootstrap -->
     <link rel="stylesheet" href="https://bootswatch.com/5/sandstone/bootstrap.min.css">
 
