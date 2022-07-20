@@ -15,12 +15,12 @@ define('URL', str_replace("index.php", "", (isset($_SERVER['HTTPS']) ? "https" :
 $articles = new ArticlesController();
 try {
     if (empty($_GET['page'])) {
-        require "views/accueil.view.php";
+        require "Views/accueil.view.php";
     } else {
         $url = explode("/", filter_var($_GET['page']), FILTER_SANITIZE_URL);
         switch ($url[0]) {
             case 'accueil' :
-                require "views/accueil.view.php";
+                require "Views/accueil.view.php";
                 break;
             case 'articles' :
                 $articles->displayArticles();
@@ -31,7 +31,7 @@ try {
                 } else if ($url[1] === "a") {
                     $articles->addArticle();
                 } else if ($url[1] === "e") {
-                    $articles->editArticle();
+                    $articles->editArticle((int)$url[2]);
                 } else if ($url[1] === "d") {
                     $articles->deleteArticle((int)$url[2]);
                 } else {

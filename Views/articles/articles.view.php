@@ -1,6 +1,6 @@
 <?php
 
-require_once "models/Article.php";
+require_once "Models/Article.php";
 
 
 ob_start(); ?>
@@ -23,7 +23,7 @@ ob_start(); ?>
         <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="public/images/Ponta-da-Piedade-Lagos.jpg" class="d-block w-100" alt="plage Portugal">
+                    <img src="Public/images/Ponta-da-Piedade-Lagos.jpg" class="d-block w-100" alt="plage Portugal">
                     <h5 class="card-title text-center mt-4 mb-4">Ponte da Piedade, Lagos </h5>
                     <p class="card-text pb-4">Ponta da Piedade se définie par ses falaises creusées dans la roche qui
                         abritent des tunnels naturels et des cavernes secrètes. Ces falaises de couleur doré contrastent
@@ -33,7 +33,7 @@ ob_start(); ?>
                         Batata.. </p>
                 </div>
                 <div class="carousel-item">
-                    <img src="public/images/istockphoto-658446924-612x612.jpg" class="d-block w-100" alt="...">
+                    <img src="Public/images/istockphoto-658446924-612x612.jpg" class="d-block w-100" alt="...">
                     <h5 class="card-title text-center mt-4 mb-4">Praia do Gigi, Quinta do lago</h5>
                     <p class="card-text pb-4 ">Joli paysage au Portugal.
                         Si vous aimez la tranquillité, cette plage est pour vous. Vous devez traverser à pied un pont
@@ -41,7 +41,7 @@ ob_start(); ?>
 
                 </div>
                 <div class="carousel-item">
-                    <img src="public/images/portugal-Algarve.jpg" class="d-block w-100" alt="...">
+                    <img src="Public/images/portugal-Algarve.jpg" class="d-block w-100" alt="...">
                     <h5 class="card-title text-center mt-4 mb-4">Praia do Gigi, Quinta do lago</h5>
                     <p class="card-text pb-4 ">Joli paysage au Portugal.
                         Si vous aimez la tranquillité, cette plage est pour vous. Vous devez traverser à pied un pont
@@ -95,13 +95,13 @@ ob_start(); ?>
     <span class="mb-3 mb-md-0 text-muted text-decoration-none lh-1 fw-bold">Tout Droits réservés © 2022 Carine Vinagre</span>
     <div id="contact">
         <p> Si vous voulez me contacter, n'hésitez pas à m'envoyer un email à <a
-                    href="mailto:vcarine.dev@gmail.com"><b class="mail">vcarine.dev@gmail.com</b></a></p>
+                    href="../../index.php"><b class="mail">vcarine.dev@gmail.com</b></a></p>
     </div>
 </footer>
 
 <?php
 $content = ob_get_clean();
-require "template.php";
+require "Views/template.php";
 ?>
 
 
