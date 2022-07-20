@@ -2,6 +2,7 @@
 
 namespace App\controllers;
 
+use App\models\Article;
 use App\models\ArticleManager;
 
 class ArticlesController
@@ -41,8 +42,28 @@ class ArticlesController
      */
     public function addArticle(): void
     {
-        require "views/add.article.view.php";
+        require "views/articles/add.article.view.php";
+    }
+    /**
+     * @param int $id
+     *
+     * @return void
+     */
+//    public function deleteArticle(Article $article): void
+    public function deleteArticle( int $id): void
+    {
+        $article = $this->articleManager->deleteArticle($id);
+
     }
 
+    /**
+     * @param int $id
+     *
+     * @return void
+     */
+    public function editArticle(): void
+    {
+        require "views/edit.article.view.php";
+    }
 
 }

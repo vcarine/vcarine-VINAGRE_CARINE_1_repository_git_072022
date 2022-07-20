@@ -38,7 +38,9 @@ ob_start();
                             <input class=" button-sub hover-overlay  w-auto p-2  border border-2  btn btn-outline-dark rounded-pill align-center"
                                    style="border: 0; outline: 0;  color : #f1f1f1 font-size : 18px"
                                    type="submit"
-                                   value="ENVOYER"">
+                                   value="ENVOYER" >
+<!--                            <a href="">Si connecter droit ajouter </a>-->
+<!--                            <a href="">Si pas inscrit => inscription </a>-->
                         </div>
                     </form>
                 </div>
@@ -50,7 +52,7 @@ ob_start();
         <span class="mb-3 mb-md-0 text-muted text-decoration-none lh-1 fw-bold">Tout Droits réservés © 2022 Carine Vinagre</span>
         <div id="contact">
             <p> Si vous voulez me contacter, n'hésitez pas à m'envoyer un email à <a
-                        href="mailto:vcarine.dev@gmail.com"><b class="mail">vcarine.dev@gmail.com</b></a></p>
+                        href="../../index.php"><b class="mail">vcarine.dev@gmail.com</b></a></p>
         </div>
     </footer>
 

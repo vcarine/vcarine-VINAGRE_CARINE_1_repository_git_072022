@@ -5,6 +5,7 @@ namespace App\models;
 use DateTime;
 use Exception;
 use PDO;
+use App\models\Article;
 
 class ArticleManager extends DbManager
 {
@@ -85,7 +86,7 @@ class ArticleManager extends DbManager
      *
      * @throws Exception
      */
-    public function addArticle(int $id): Article
+    public function addArticle(int $id): /*?*/Article
     {
         $request = $this->getBdd()->prepare('SELECT * FROM articles WHERE id = :id');
         $request->bindParam(':id', $id);
@@ -93,6 +94,28 @@ class ArticleManager extends DbManager
         $article = $request->fetch(PDO::FETCH_ASSOC);
 
         return $this->createdObjectArticle($article);
+    }
+    /**
+     * @param int $id
+     *
+     *
+     * @throws Exception
+     */
+    public function deleteArticle(int $id){
+        $req = "
+        Delete from articles where id = :idArticle
+        ";
+        // debug une requete
+//        print_r($req); die();
+        $stmt = $this->getBdd()->prepare($req);
+//        dd($stmt);
+        $stmt->bindValue(":idArticle",$id,PDO::PARAM_INT);
+        $stmt->execute();
+        $stmt->closeCursor();
+
+
+
+
     }
 
 }

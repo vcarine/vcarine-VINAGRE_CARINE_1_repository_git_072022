@@ -17,9 +17,8 @@ ob_start();
 
         </div>
     </div>
-<div class="card-body text-center">
+<div class=" text-center">
     <a href="<?= URL?>articles" class="btn btn-primary text-center" target="_blank">Retour</a>
-
 </div>
 
 <?php

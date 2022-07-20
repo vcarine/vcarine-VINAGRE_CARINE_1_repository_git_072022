@@ -30,12 +30,10 @@ try {
                     $articles->showArticle((int)$url[2]);
                 } else if ($url[1] === "a") {
                     $articles->addArticle();
-                } else if ($url[1] === "m") {
-                    echo "modifier un article";
+                } else if ($url[1] === "e") {
+                    $articles->editArticle();
                 } else if ($url[1] === "d") {
-                    echo "supprimer un article";
-//                }else if ($url[1] === "r"){
-//                    echo "supprimer un article";
+                    $articles->deleteArticle((int)$url[2]);
                 } else {
                     throw new Exception("La page n'existe pas");
                 }
