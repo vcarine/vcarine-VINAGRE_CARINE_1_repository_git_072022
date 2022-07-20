@@ -8,7 +8,7 @@
     <title></title>
 
     <!--    css-->
-    <link rel="stylesheet" href="../Public/style.css">
+    <link rel="stylesheet" href="../Public/css/style.css">
     <!--    bootstrap -->
     <link rel="stylesheet" href="https://bootswatch.com/5/sandstone/bootstrap.min.css">
 
@@ -41,7 +41,7 @@
             </ul>
             <ul class="navbar-nav w-100 d-flex justify-content-end">
                 <li class="nav-item">
-                    <a class="nav-link active" href="../index.php">Connexion</a>
+                    <a class="nav-link active" href="">Connexion</a>
                 </li>
             </ul>
         </div>

@@ -21,7 +21,7 @@ class ArticlesController
 
     {
         $articles = $this->articleManager->getArticles();
-        require "Views/articles/articles.view.php";
+        require "Views/Articles/articles.view.php";
     }
 
     /**
@@ -32,7 +32,7 @@ class ArticlesController
     public function showArticle(int $id): void
     {
         $article = $this->articleManager->showArticle($id);
-        require "Views/articles/show.article.view.php";
+        require "Views/Articles/show.article.view.php";
     }
     /**
      * @param int $id
@@ -41,7 +41,7 @@ class ArticlesController
      */
     public function addArticle(): void
     {
-        require "Views/articles/add.article.view.php";
+        require "Views/Articles/add.article.view.php";
     }
     /**
      * @param int $id
@@ -62,7 +62,7 @@ class ArticlesController
      */
     public function editArticle(): void
     {
-        require "Views/articles/edit.article.view.php";
+        require "Views/Articles/edit.article.view.php";
     }
 
 }
