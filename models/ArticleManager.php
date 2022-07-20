@@ -1,8 +1,8 @@
 <?php
 
-require_once "db-manager.php";
-require_once "article.php";
+namespace App\models;
 
+use \PDO;
 
 class ArticleManager extends DbManager
 {

@@ -1,12 +1,14 @@
 <?php
 
+include 'vendor/autoload.php';
+
+use App\controllers\ArticlesController;
 
 define('URL', str_replace("index.php", "", (isset($_SERVER['HTTPS']) ? "https" : "http") .
-    "://$_SERVER[HTTP_HOST]$_SERVER[PHP_SELF]"));
-
-require "controllers/ArticlesController.php";
+"://".$_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF']));
 
 $articleController = new ArticlesController;
+
 try {
     if (empty($_GET['page'])) {
         require "views/accueil.view.php";

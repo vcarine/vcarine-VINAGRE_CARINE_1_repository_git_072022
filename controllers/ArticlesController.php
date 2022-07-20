@@ -1,7 +1,8 @@
 <?php
 
-require_once "models/ArticleManager.php";
+namespace App\controllers;
 
+use App\models\ArticleManager;
 
 class ArticlesController
 {

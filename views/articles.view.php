@@ -69,13 +69,12 @@ ob_start(); ?>
                 <div class="col">
                     <div class="card h-100">
                         <div class="card-body">
+                            <p class="card-text text-center fw-bold"><?= $articles[$i]->getContent() ?></p>
 
-                            <h5 class="card-title text-center"><?= $articles[$i]->getTitle(); ?></h5>
                             <img src="image/<?= $articles[$i]->getPicture() ?>" class="w-100 p-3" alt="Plage">
-                            <p class="card-text"><?= $articles[$i]->getContent() ?></p>
+                            <h5 class="card-title text-center"><?= $articles[$i]->getTitle(); ?></h5>
 
                         </div>
-
                         <div class="card-body text-center">
                             <a href="" class="btn btn-info text-center" target="_blank" ">En savoir plus</a>
                         </div>
