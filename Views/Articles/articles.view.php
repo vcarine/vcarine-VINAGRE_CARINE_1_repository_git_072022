@@ -89,16 +89,6 @@ ob_start(); ?>
 
 </section>
 
-<!--section footer-->
-
-<footer class="bg-light text-center my-auto p-4 ">
-    <span class="mb-3 mb-md-0 text-muted text-decoration-none lh-1 fw-bold">Tout Droits réservés © 2022 Carine Vinagre</span>
-    <div id="contact">
-        <p> Si vous voulez me contacter, n'hésitez pas à m'envoyer un email à <a
-                    href="../../index.php"><b class="mail">vcarine.dev@gmail.com</b></a></p>
-    </div>
-</footer>
-
 <?php
 $content = ob_get_clean();
 require "Views/template.php";

@@ -1,30 +1,44 @@
-<!DOCTYPE html>
-<html>
+<?php ob_start(); ?>
+    <!DOCTYPE html>
+    <html>
 <head>
     <meta charset="utf-8">
-    <title>Se connecter</title>
-
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-
-    <link rel="stylesheet" type="text/css" href="Public/css/security.css">
-
+    <link rel="stylesheet" type="css" href="Public/css/style.css">
 
 </head>
 <body>
 
-<section>
-    <div id="login-body">
-        <h1>S'inscrire</h1>
+<section class="d-flex justify-content-center align-content-center w-100 h-100   ">
+    <div class="m-5 rounded opacity-25 bg-dark ">
+        <div class="login px-5 py-2">
+            <h1 class="text-secondary text-center m-2">S'inscrire</h1>
 
-        <form method="post" action="">
-            <input type="email" name="email" placeholder="Votre adresse email" required/>
-            <input type="password" name="password" placeholder="Mot de passe" required/>
-            <input type="password" name="password_two" placeholder="Retapez votre mot de passe" required/>
-            <button type="submit">S'inscrire</button>
-        </form>
-
-        <p class="grey"<a href="index.php">Connectez-vous</a>.</p>
+                <form class="form-bloc text-center ">
+                    <div class="form-groupe m-3 px-5 ">
+                        <input class=" rounded w-100  m-3 p-2 border border-light border-3 form-control form-control-lg" type="email" name="email"
+                               placeholder="Votre adresse email" required/>
+                    </div>
+                    <div class="form-groupe m-3 px-5 ">
+                        <input class=" rounded w-100  m-3 p-2 form-control form-control-lg"  type="password" name="password"
+                               placeholder="Mot de passe" required/>
+                    </div>
+                    <div class="form-groupe m-3 px-5 ">
+                        <input class=" rounded w-100  m-3 p-2 form-control form-control-lg" " type="password"
+                               name="password_two" placeholder="Retapez votre mot de passe" required/>
+                    </div>
+                    <div class="form-groupe m-3 px-5 ">
+                        <button class="button bg-danger text-white  m-3 p-2 w-100 rounded-1 border border-dark form-control form-control-lg" type="submit">Se connecter</button>
+                    </div>
+                </form>
+            <p class="text-secondary text-center m-3 px-3">Déjà sur mon blog ? <a href="<?= URL ?>security/login">Connectez-vous</a>
+            </p>
+        </div>
     </div>
+
 </section>
+
 </body>
-</html>
+<?php
+$content = ob_get_clean();
+require "Views/template.php";
+?>

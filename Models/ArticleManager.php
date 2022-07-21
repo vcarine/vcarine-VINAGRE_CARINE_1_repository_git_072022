@@ -90,7 +90,7 @@ class ArticleManager extends DbManager
         $title = '';
         $author = '';
 
-        
+
 
         $request = $this->getBdd()->prepare('INSERT INTO articles (image_link, content, title, author) VALUES (:image_link, :content, :title, :author)');
         $request->bindParam(':image_link', $imageLink);

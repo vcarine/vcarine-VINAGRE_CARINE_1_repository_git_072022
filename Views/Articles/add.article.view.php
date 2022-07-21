@@ -5,8 +5,8 @@ use App\models\Article;
 ob_start();
 /** @var Article $article */
 ?>
-
-    <section class="contact w-100 h-100 rounded mt-5 p-1  bg-light"   id="contact">
+<body style="background : #f7f1e3">
+    <section class=" w-100 h-100 rounded mt-5 p-1" style="background : #f7f1e3"  id="contact">
 
         <h2 class="text-center display-6 m-5 p-2" style="background-color: #333; color: #aaa;"><strong>Commentaires</strong></h2>
 
@@ -47,14 +47,7 @@ ob_start();
             </div>
         </div>
     </section>
-
-    <footer class="bg-light text-center my-auto p-1 ">
-        <span class="mb-3 mb-md-0 text-muted text-decoration-none lh-1 fw-bold">Tout Droits réservés © 2022 Carine Vinagre</span>
-        <div id="contact">
-            <p> Si vous voulez me contacter, n'hésitez pas à m'envoyer un email à <a
-                        href="../../index.php"><b class="mail">vcarine.dev@gmail.com</b></a></p>
-        </div>
-    </footer>
+</body>
 
 <?php
 
