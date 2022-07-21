@@ -8,8 +8,8 @@
 </head>
 <body>
 
-<section class="d-flex justify-content-center align-content-center w-100 h-100   ">
-    <div class="m-5 rounded opacity-25 bg-dark ">
+<section class="d-flex justify-content-center align-content-center w-100 h-100">
+    <div class="m-5 rounded-3 opacity-25 bg-dark ">
         <div class="login px-5 py-2">
             <h1 class="text-secondary text-center m-2">S'inscrire</h1>
 
