@@ -7,7 +7,7 @@ ob_start(); ?>
 
 <!--section projet-->
 
-<section class="border-bottom">
+<section class="border-bottom mb-5">
     <div class="container mb-5 pb-5">
         <h2 class="text-center mt-mb-5 mt-4 display-4">Algarve</h2>
         <p class="card-text">Les côtes ensoleillées de l'Algarve sont le lieu idéal pour des escapades en tout genre,
@@ -61,7 +61,7 @@ ob_start(); ?>
         </div>
 
         <!--     card-->
-        <div class="row row-cols-1 row-cols-md-3 g-4">
+        <div class="row row-cols-1 row-cols-md-3 g-4 mt-5">
     <?php
 
             for ($i = 0; $i < count($articles); $i++) {
@@ -87,6 +87,37 @@ ob_start(); ?>
                 </div>
             <?php } ?>
 
+</section>
+
+<!--contact-->
+
+<section class="d-flex justify-content-center align-content-center w-100 h-100 m-3 p-3 " id="contact">
+    <div class="card shadow  p-4 rounded d-flex justify-content-center  ">
+
+        <h1 class="text-center mb-3">Me contacter</h1>
+        <form class="d-flex justify-content-center  w-100 h-100 ">
+            <fieldset>
+                <div class="form-group mb-3">
+                    <input type="text" readonly class="form-control" id="nom" placeholder="Votre adresse email">
+                </div>
+
+                <div class="row mb-3">
+                    <div class="col">
+                        <input type="text" readonly class="form-control" placeholder="Votre Nom">
+                    </div>
+                    <div class="col">
+                        <input type="text" readonly class="form-control" placeholder="Votre Prénom">
+                    </div>
+                </div>
+                <div class="input-group-prepend mb-3"></div>
+                <textarea readonly class="form-control" aria-label="Message" placeholder="Votre message"></textarea>
+
+                <input class=" button-sub hover-overlay text-dark border border-2 btn btn-outline-warning  fw-bold mt-2  "
+                       type="submit"
+                       value="ENVOYER">
+            </fieldset>
+        </form>
+    </div>
 </section>
 
 <?php

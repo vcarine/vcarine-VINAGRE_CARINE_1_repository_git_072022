@@ -6,7 +6,7 @@ ob_start();
 /** @var Article $article */
 ?>
 <body style="background : #f7f1e3">
-    <section class=" w-100 h-100 rounded mt-5 p-1" style="background : #f7f1e3"  id="contact">
+    <section class=" w-100 h-100 rounded mt-5 p-1" style="background : #f7f1e3">
 
         <h2 class="text-center display-6 m-5 p-2" style="background-color: #333; color: #aaa;"><strong>Commentaires</strong></h2>
 

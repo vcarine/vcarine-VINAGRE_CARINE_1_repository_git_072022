@@ -27,13 +27,13 @@
         <div class="collapse navbar-collapse  " id="navbarColor01">
             <ul class="navbar-nav w-100 d-flex justify-content-start ">
                 <li class="nav-item">
-                    <a class="nav-link " href="<?= URL?>accueil">Accueil</a>
+                    <a class="nav-link " href="<?= URL?>accueil">Carine VINAGRE</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="<?= URL?>articles">Article</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Contact</a>
+                    <a class="nav-link" href="#contact">Contact</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#"></a>
@@ -41,12 +41,14 @@
             </ul>
             <ul class="navbar-nav w-100 d-flex justify-content-end">
                 <li class="nav-item">
-                    <a class="nav-link " href="<?= URL ?>security/login">Connexion</a>
+                    <a  class="text-decoration-none text-secondary" href="<?= URL ?>security/login">Connexion</a> |  <a class="text-decoration-none text-secondary" href="<?= URL ?>security/register"">Inscription</a>
                 </li>
             </ul>
         </div>
     </div>
 </nav>
+
+
 
 <div class="container">
     <?= $content ?>
