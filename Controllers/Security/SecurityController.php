@@ -25,7 +25,6 @@ class SecurityController
 //            var_dump('traitement des données');
 //            var_dump($_POST);
             $resultat = $this->userManager->login($_POST['username'], $_POST['password']);
-
             die();
             // connexion
         }
