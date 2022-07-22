@@ -33,7 +33,6 @@
         </div>
     </div>
     <?php
-    $errors = [];
     if(count($errors) != 0){
         echo('<ul>');
         foreach ($errors as $error){

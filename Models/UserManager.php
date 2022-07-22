@@ -20,7 +20,7 @@ class UserManager extends DbManager
                 $user = new User($resultat['id'],$resultat['username'], $resultat['password']);
             }
         }
+        return($user);
 
-//  var_dump($resultat);
         }
 }
