@@ -14,17 +14,17 @@
         <div class="login px-5 py-2">
             <h1 class="text-secondary text-center m-2">S'inscrire</h1>
 
-            <form class="form-bloc text-center " method="post" >
-                <div class="form-groupe m-3 px-5 ">
+            <form class="form-bloc text-center " method="post"  action="register.php">
+                <div class="form-groupe ">
                     <input class=" rounded w-100  m-3 p-2 border border-light border-3 form-control" type="text"
                            name="username"
                            placeholder="Votre nom d'utilisateur" required/>
                 </div>
-                <div class="form-groupe m-3 px-5 ">
+                <div class="form-groupe ">
                     <input class=" rounded w-100  m-3 p-2 border border-light border-3 form-control" type="password" name="password"
                            placeholder="Mot de passe" required/>
                 </div>
-                <div class="form-groupe m-3 px-5 ">
+                <div class="form-groupe ">
                     <button class="btn btn-danger text-white  m-3 p-2 w-100 rounded-1 border border-dark form-control"
                             type="submit">Se connecter</button>
                 </div>

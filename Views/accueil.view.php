@@ -66,19 +66,19 @@
             <form class="d-flex justify-content-center  w-100 h-100 ">
                 <fieldset>
                     <div class="form-group mb-3">
-                        <input type="text" readonly class="form-control" id="nom" placeholder="Votre adresse email">
+                        <input type="text" class="form-control" id="nom" placeholder="Votre adresse email">
                     </div>
 
                     <div class="row mb-3">
                         <div class="col">
-                            <input type="text" readonly class="form-control" placeholder="Votre Nom">
+                            <input type="text" class="form-control" placeholder="Votre Nom">
                         </div>
                         <div class="col">
-                            <input type="text" readonly class="form-control" placeholder="Votre Prénom">
+                            <input type="text" class="form-control" placeholder="Votre Prénom">
                         </div>
                     </div>
                     <div class="input-group-prepend mb-3"></div>
-                    <textarea readonly class="form-control" aria-label="Message" placeholder="Votre message"></textarea>
+                    <textarea class="form-control" aria-label="Message" placeholder="Votre message"></textarea>
 
                     <input class=" button-sub hover-overlay text-dark border border-2 btn btn-outline-warning  fw-bold mt-2  "
                            type="submit"

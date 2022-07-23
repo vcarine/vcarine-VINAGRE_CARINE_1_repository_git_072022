@@ -7,7 +7,6 @@ include 'vendor/autoload.php';
 
 define('URL', str_replace("index.php", "", (isset($_SERVER['HTTPS']) ? "https" : "http") . "://" . $_SERVER['HTTP_HOST'] . $_SERVER['PHP_SELF']));
 
-//$articles = new ArticlesController();
 try {
     if (empty($_GET['page'])) {
         require "Views/accueil.view.php";
@@ -21,44 +20,6 @@ try {
             'security' => security($url[1]),
             default => throw new Exception("La page n'existe pas"),
         };
-
-
-
-
-        /*switch ($url[0]) {
-            case 'accueil' :
-                require "Views/accueil.view.php";
-                break;
-            case 'articles' :
-                $articles->displayArticles();
-                break;
-            case 'article':
-                if ($url[1] === "s") {
-                    $articles->showArticle((int)$url[2]);
-                } else if ($url[1] === "a") {
-                    $articles->addArticle();
-                } else if ($url[1] === "e") {
-                    $articles->editArticle();
-                } else if ($url[1] === "d") {
-                    $articles->deleteArticle((int)$url[2]);
-                } else {
-                    throw new Exception("La page n'existe pas");
-                }
-                break;
-            case 'security':
-                $controller = new SecurityController();
-
-                if ($url[1] == 'login') {
-                    $controller->login();
-                }
-
-                if ($url[1] == 'register') {
-                    $controller->register();
-                }
-                break;
-            default :
-                throw new Exception("La page n'existe pas");
-        }*/
     }
 } catch
 (Exception $e) {
@@ -111,7 +72,9 @@ function security(string $parameter): void
     if ($parameter === 'login') {
         $controller->login();
     }
-
+    if ($parameter === 'logout') {
+        $controller->logout();
+    }
     if ($parameter === 'register') {
         $controller->register();
     }

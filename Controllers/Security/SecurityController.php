@@ -22,31 +22,42 @@ class SecurityController
     public function login(): void
     {
         $errors = [];
+//        dd($_SERVER);
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 //            var_dump('traitement des données');
 //            var_dump($_POST);
-            if(empty($_POST['username'])){
-                $errors[] = 'Veuillez saisir un username';
-            }
+//            dd($_POST);
+            // JE VAIS APPELER MON USERMANAGER ET APPELER SA FONCTION LOGIN =>  QUI VA DONNE UN RESULTAT
 
-            if(empty($_POST['password'])){
-                $errors[] = 'Veuillez saisir un password';
+            if (empty($_POST['username'])) {
+                $errors[] = "Veuillez choisir un username";
             }
-
-            if(count($errors) == 0){
+            if (empty($_POST['password'])) {
+                $errors[] = "Veuillez choisir un password";
+            }
+            if (count($errors) == 0) {
                 $resultat = $this->userManager->login($_POST['username'], $_POST['password']);
+//            var_dump($resultat);
+//            die();
                 if(!is_null($resultat)){
-                    //article (page)
                     $_SESSION['user'] = serialize($resultat);
-                    header('Location: /articles');
+                    header('Location: article.view.php');
                 } else {
-                    $errors[] = 'Les identifiants sont incorrectes !';
+                    $errors = "les identifiants sont incorrectes";
                 }
             }
-
-            // connexion
         }
+
         require "Views/security/login.php";
+    }
+
+    /**
+     * @return void
+     */
+    public function logout()
+    {
+        session_destroy();
+        header('Location: index.php?controller=security&action=login');
     }
 
     /**
