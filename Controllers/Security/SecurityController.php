@@ -65,9 +65,6 @@ class SecurityController
             if (empty($_POST['password'])) {
                 $errors[] = "Veuillez choisir un password";
             }
-            if ($email->rowCount() > 0) {
-                $errors[] = 'Un utilisateur est déjà enregistré avec cet email.';
-            }
 
             // VARIABLES
             $email 				= htmlspecialchars($_POST['email']);

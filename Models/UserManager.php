@@ -38,16 +38,12 @@ class UserManager extends DbManager
         $req->bindParam(':username', $username);
         $req->execute();
 
-        if ($req->rowCount() > 0) {
-            $errors[] = 'Un utilisateur est déjà enregistré avec ce nom.';
-        }
-
+        // email
         $req = $this->getBdd()->prepare('SELECT * FROM user WHERE email = :email');
         $req->bindValue(':email', $email, \PDO::PARAM_STR);
         $req->execute();
 
-
-
+        //password
         if (empty($errors)) {
             $req = $this->getBdd()->prepare('INSERT INTO user (username, email, password, created_at) VALUES (:username, :email, :password, NOW()) ');
             $req->bindValue(':name', $username, \PDO::PARAM_STR);
@@ -55,8 +51,6 @@ class UserManager extends DbManager
             $req->bindValue(':password', password_hash($password, PASSWORD_ARGON2ID), \PDO::PARAM_STR);
             $req->execute();
 
-            unset($username, $email, $password);
-            $success = 'Votre inscription est terminée, vous pouvez <a href="Views/security/login.php">vous connecter</a>.';
         }
 
     }
