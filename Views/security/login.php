@@ -7,14 +7,14 @@
 
 </head>
 <body>
+
 <?php
 //    var_dump($errors);
 if (count($errors) != 0) ?>
-<div class=" m-3 p-2 rounded text-dark text-center  fw-bold alert alert-danger">
-    <?php foreach ($errors as $error): ?>
-        <p><?= $error; ?></p>
-    <?php endforeach; ?>
-</div>
+
+<?php foreach ($errors as $error): ?>
+    <p class=" m-2 text-center text-danger fw-bold"><?= $error; ?></p>
+<?php endforeach; ?>
 
 <section class="d-flex justify-content-center align-content-center w-100 h-100 ">
     <div class="m-5 rounded-3 opacity-25 bg-dark ">

@@ -12,12 +12,11 @@
 <?php
 //    var_dump($errors);
 if (count($errors) != 0) ?>
-<div class=" m-3 alert alert-danger">
+
     <?php foreach ($errors as $error): ?>
-        <p><?= $error; ?></p>
+        <p class=" m-2 text-center text-danger fw-bold"><?= $error; ?></p>
     <?php endforeach; ?>
 
-</div>
 <section class="d-flex justify-content-center align-content-center w-100 h-100 ">
     <div class="m-2 rounded-3 bg-dark ">
         <div class="login px-5 py-2">
