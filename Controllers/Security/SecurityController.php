@@ -31,34 +31,16 @@ class SecurityController
             // JE VAIS APPELER MON USERMANAGER ET APPELER SA FONCTION LOGIN =>  QUI VA DONNE UN RESULTAT
 
             if (empty($_POST['email'])) {
-                $errors[] =  "Veuillez choisir un email";
+                $errors[] = "Veuillez choisir un email";
             }
             if (empty($_POST['password']) /*|| strlen($password) < 6*/) {
                 $errors[] = "Veuillez choisir un password ";
                 /*et mot de passe doit contenir au moins 6 caractères*/
             }
-            if (count($errors) == 0) {
-                $resultat = $this->userManager->login($_POST['username'], $_POST['email'], $_POST['password']);
-//            var_dump($resultat);
-//            die();
-                if(!is_null($resultat)){
-                    $_SESSION['user'] = serialize($resultat);
-                    header('Location: article.view.php');
-                } else {
-                    $errors = "les identifiants sont incorrectes";
-                }
-            }
+
         }
 
         require "Views/security/login.php";
-    }
-    /**
-     * @return void
-     */
-    public function logout()
-    {
-        session_destroy();
-        header('Location: index.php?controller=security&action=login');
     }
 
     /**
@@ -75,25 +57,29 @@ class SecurityController
             // JE VAIS APPELER MON USERMANAGER ET APPELER SA FONCTION LOGIN =>  QUI VA DONNE UN RESULTAT
 
             if (empty($_POST['username'])) {
-                $errors[] =  "Veuillez choisir un username";
+                $errors[] = "Veuillez choisir un username";
             }
             if (empty($_POST['email'])) {
-                $errors[] =  "Veuillez choisir un email";
+                $errors[] = "Veuillez choisir un email";
             }
             if (empty($_POST['password'])) {
                 $errors[] = "Veuillez choisir un password";
             }
-            if (count($errors) == 0) {
-                $resultat = $this->userManager->login($_POST['username'], $_POST['email'], $_POST['password']);
-//            var_dump($resultat);
-//            die();
-                if(!is_null($resultat)){
-                    $_SESSION['user'] = serialize($resultat);
-                    header('Location: article.view.php');
-                } else {
-                    $errors = "les identifiants sont incorrectes";
-                }
+            if ($email->rowCount() > 0) {
+                $errors[] = 'Un utilisateur est déjà enregistré avec cet email.';
             }
+
+            // VARIABLES
+            $email 				= htmlspecialchars($_POST['email']);
+            // ADRESSE EMAIL VALIDE
+            if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
+
+                header('location: inscription.php?error=1&message=Votre adresse email est invalide.');
+                exit();
+
+            }
+
+
         }
         require "Views/security/register.php";
     }

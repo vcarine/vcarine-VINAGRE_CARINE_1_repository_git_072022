@@ -72,9 +72,6 @@ function security(string $parameter): void
     if ($parameter === 'login') {
         $controller->login();
     }
-    if ($parameter === 'logout') {
-        $controller->logout();
-    }
     if ($parameter === 'register') {
         $controller->register();
     }
