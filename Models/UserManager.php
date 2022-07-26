@@ -8,7 +8,7 @@ class UserManager extends DbManager
     {
 
         if (empty($errors)) {
-            $req = $db->prepare('SELECT * FROM user WHERE email=:email');
+            $req = $this->getBdd()->prepare('SELECT * FROM user WHERE email=:email');
             $req->bindValue(':email', $email, \PDO::PARAM_STR);
             $req->execute();
 
@@ -41,7 +41,7 @@ class UserManager extends DbManager
             }
 
             if (empty($errors)) {
-                $req = $this->getBdd()->prepare('INSERT INTO user (username, email, password) VALUES (:username, :email, :password ');
+                $req = $this->getBdd()->prepare('INSERT INTO user (username, email, password) VALUES ( :email,:username, :password ');
                 $req->bindValue(':username', $username, \PDO::PARAM_STR);
                 $req->bindValue(':email', $email, \PDO::PARAM_STR);
                 $req->bindValue(':password', password_hash($password, PASSWORD_ARGON2ID), \PDO::PARAM_STR);
