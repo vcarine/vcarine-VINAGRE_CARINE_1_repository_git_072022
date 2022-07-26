@@ -18,7 +18,7 @@ if(!empty($errors)):?>
     </div>
 <?php endif;?>
 
-<section class="d-flex justify-content-center align-content-center w-100 h-100 ">
+<section class="d-flex justify-content-center align-content-center w-100 h-100 col-md">
     <div class="m-5 rounded-3 opacity-25 bg-dark ">
         <div class="login px-5 py-2">
             <h1 class="text-secondary text-center m-2">S'identifier</h1>
@@ -27,7 +27,9 @@ if(!empty($errors)):?>
                 <div class="form-groupe ">
                     <input class=" rounded w-100  m-3 p-2 border border-light border-3 form-control" type="email"
                            name="email"
-                           placeholder="Votre email"/>
+                           placeholder="Votre email"
+                           value="<?= $email ?? ''; ?>"
+
                 </div>
                 <div class="form-groupe">
                     <input class=" rounded w-100  m-3 p-2 border border-light border-3 form-control" type="password"

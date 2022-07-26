@@ -21,63 +21,78 @@ class SecurityController
      */
     public function login(): void
     {
+        if (!empty($_SESSION['username'])) {
+            header('Location: article.php');
+        }
+        if (!empty($_POST)) {
+            $post = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
+            extract($post);
 
-        $errors = [];
-//        dd($_SERVER);
-        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-//            var_dump('traitement des données');
-//            var_dump($_POST);
-//            dd($_POST);
-            // JE VAIS APPELER MON USERMANAGER ET APPELER SA FONCTION LOGIN =>  QUI VA DONNE UN RESULTAT
+            $errors = [];
 
-            if (empty($_POST['email'])) {
-                $errors[] = "Veuillez choisir un email";
+            if (empty($email) || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
+                $errors[] = 'L\'adresse email n\'est pas valide.';
             }
-            if (empty($_POST['password']) /*|| strlen($password) < 6*/) {
-                $errors[] = "Veuillez choisir un password ";
-                /*et mot de passe doit contenir au moins 6 caractères*/
+
+            if (empty($password)) {
+                $errors[] = 'Le mot de passe est requis.';
             }
 
         }
 
+
+//        $errors = [];
+////        dd($_SERVER);
+//        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+////            var_dump('traitement des données');
+////            var_dump($_POST);
+////            dd($_POST);
+//            // JE VAIS APPELER MON USERMANAGER ET APPELER SA FONCTION LOGIN =>  QUI VA DONNE UN RESULTAT
+//
+//            if (empty($_POST['email'])) {
+//                $errors[] = "Veuillez choisir un email";
+//            }
+//            if (empty($_POST['password']) /*|| strlen($password) < 6*/) {
+//                $errors[] = "Veuillez choisir un password ";
+//                /*et mot de passe doit contenir au moins 6 caractères*/
+//            }
         require "Views/security/login.php";
     }
+    //validator_login
 
     /**
      * @return void
      */
     public function register(): void
     {
-        $errors = [];
-//        dd($_SERVER);
-        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-//            var_dump('traitement des données');
-//            var_dump($_POST);
-//            dd($_POST);
-            // JE VAIS APPELER MON USERMANAGER ET APPELER SA FONCTION LOGIN =>  QUI VA DONNE UN RESULTAT
 
-            if (empty($_POST['username'])) {
-                $errors[] = "Veuillez choisir un username";
-            }
-            if (empty($_POST['email'])) {
-                $errors[] = "Veuillez choisir un email";
-            }
-            if (empty($_POST['password'])) {
-                $errors[] = "Veuillez choisir un password";
+        $user = null;
+        if (!empty($_SESSION['username'])) {
+            header('Location: article.php');
+        }
+        if (!empty($_POST)) {
+            $post = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
+            extract($post);
+
+            $errors = [];
+            if (empty($_POST['username'])){
+                $errors[] = "Veuillez choisir un username.";
             }
 
-            // VARIABLES
-            $email 				= htmlspecialchars($_POST['email']);
-            // ADRESSE EMAIL VALIDE
-            if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
-
-                header('location: inscription.php?error=1&message=Votre adresse email est invalide.');
-                exit();
-
+            if (empty($email) || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
+                $errors[] = 'L\'adresse email n\'est pas valide.';
             }
 
+            if($user && password_verify($password, $user->password)){
+                $_SESSION['username'] = $user;
+                header('Location: article.php');
+            }
+            if (empty($password) || strlen($password) < 5) {
+                $errors[] = 'Le mot de passe est requis et doit contenir au moins 6 caractères.';
+            }
 
         }
+
         require "Views/security/register.php";
     }
 

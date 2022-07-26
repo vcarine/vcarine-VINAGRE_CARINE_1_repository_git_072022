@@ -35,13 +35,12 @@
                 <li class="nav-item">
                     <a class="nav-link" href="#contact">Contact</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#"></a>
-                </li>
+
             </ul>
             <ul class="navbar-nav w-100 d-flex justify-content-end">
                 <li class="nav-item">
-                    <a  class="text-decoration-none text-secondary" href="<?= URL ?>security/login">Connexion</a> |  <a class="text-decoration-none text-secondary" href="<?= URL ?>security/register"">Inscription</a>
+                    <a  class="text-decoration-none text-secondary" href="<?= URL ?>security/login">Connexion</a> |
+                    <a class="text-decoration-none text-secondary" href="<?= URL ?>security/register"">Inscription</a>
                 </li>
             </ul>
         </div>
@@ -53,6 +52,7 @@
 <div class="container">
     <?= $content ?>
 </div>
+
 
 <!--section footer-->
 
