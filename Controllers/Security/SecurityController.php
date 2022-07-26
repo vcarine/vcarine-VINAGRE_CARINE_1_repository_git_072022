@@ -40,25 +40,8 @@ class SecurityController
 
         }
 
-
-//        $errors = [];
-////        dd($_SERVER);
-//        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-////            var_dump('traitement des données');
-////            var_dump($_POST);
-////            dd($_POST);
-//            // JE VAIS APPELER MON USERMANAGER ET APPELER SA FONCTION LOGIN =>  QUI VA DONNE UN RESULTAT
-//
-//            if (empty($_POST['email'])) {
-//                $errors[] = "Veuillez choisir un email";
-//            }
-//            if (empty($_POST['password']) /*|| strlen($password) < 6*/) {
-//                $errors[] = "Veuillez choisir un password ";
-//                /*et mot de passe doit contenir au moins 6 caractères*/
-//            }
         require "Views/security/login.php";
     }
-    //validator_login
 
     /**
      * @return void
