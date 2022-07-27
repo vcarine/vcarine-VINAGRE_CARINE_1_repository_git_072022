@@ -11,6 +11,7 @@ class Article
     private string $title;
     private string $content;
     private string $author;
+    private string $slug;
     private DateTime $createdAt;
 
     /**
@@ -21,14 +22,33 @@ class Article
      * @param string $author
      * @param DateTime $createdAt
      */
-    public function __construct(int $id, string $image_link, string $title, string $content, string $author, DateTime $createdAt)
+    public function __construct(int $id, string $image_link, string $title, string $content, string $author,string $slug,DateTime $createdAt)
     {
         $this->id = $id;
         $this->image_link = $image_link;
         $this->title = $title;
         $this->content = $content;
         $this->author = $author;
+        $this->slug = $slug;
         $this->createdAt = $createdAt;
+    }
+
+    /**
+     * @return string
+     */
+    public function getSlug(): string
+    {
+        return $this->slug;
+    }
+
+    /**
+     * @param string $slug
+     * @return Article
+     */
+    public function setSlug(string $slug): Article
+    {
+        $this->slug = $slug;
+        return $this;
     }
 
     /**
@@ -140,5 +160,6 @@ class Article
 
         return $this;
     }
+
 }
 

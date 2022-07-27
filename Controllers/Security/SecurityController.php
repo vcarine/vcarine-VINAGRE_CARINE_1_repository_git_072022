@@ -6,7 +6,7 @@ use App\models\UserManager;
 
 class SecurityController
 {
-    private $userManager;
+    private UserManager $userManager;
 
     /**
      * @param $userManager

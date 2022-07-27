@@ -76,6 +76,7 @@ class ArticleManager extends DbManager
             $article['content'],
             $article['title'],
             $article['author'],
+            $article['slug'],
             new DateTime($article['createdAt'])
         );
     }
@@ -89,14 +90,19 @@ class ArticleManager extends DbManager
         $content = '';
         $title = '';
         $author = '';
+        $slug = '';
+        $createdAt = '';
 
 
 
-        $request = $this->getBdd()->prepare('INSERT INTO articles (image_link, content, title, author) VALUES (:image_link, :content, :title, :author)');
+        $request = $this->getBdd()->prepare('INSERT INTO articles (image_link, content, title, author, slug, createAt ) VALUES (:image_link, :content, :title, :author, :slug, :createAt)');
         $request->bindParam(':image_link', $imageLink);
         $request->bindParam(':content', $content);
         $request->bindParam(':title', $title);
         $request->bindParam(':author', $author);
+        $request->bindParam(':slug', $slug);
+        $request->bindParam(':createdAt', $createdAt);
+
         $request->execute();
 
     }
