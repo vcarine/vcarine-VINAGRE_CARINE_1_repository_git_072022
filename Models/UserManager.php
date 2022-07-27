@@ -18,21 +18,21 @@ class UserManager extends DbManager
 
     public function read(int $id)
     {
-        $sql = "SELECT * FROM user WHERE id = ?";
-        $r = $this->db->prepare($sql);
-        $r->bindValue(1, $id, PDO::PARAM_INT);
-        $r->execute();
 
-        return new User($r->fetch());
+        $req = $this->getBdd()->prepare("SELECT * FROM user WHERE id = ?");
+        $req->bindValue(1, $id, PDO::PARAM_INT);
+        $req->execute();
+
+        return new User($req->fetch());
     }
 
     public function findByEmail(string $email)
     {
-        $sql = "SELECT * FROM user WHERE email = ?";
-        $r = $this->db->prepare($sql);
-        $r->bindValue(1, $email, PDO::PARAM_STR);
-        $r->execute();
-        $result = $r->fetch();
+
+        $req = $this->getBdd()->prepare("SELECT * FROM user WHERE email = ?");
+        $req->bindValue(1, $email, PDO::PARAM_STR);
+        $req->execute();
+        $result = $req->fetch();
         if (!$result) {
             return null;
         }
@@ -40,62 +40,52 @@ class UserManager extends DbManager
     }
     public function findByUsername(string $username)
     {
-        $sql = "SELECT * FROM user WHERE username = ?";
-        $r = $this->db->prepare($sql);
-        $r->bindValue(1, $username, PDO::PARAM_STR);
-        $r->execute();
-        $result = $r->fetch();
+        $req = $this->getBdd()->prepare("SELECT * FROM user WHERE username = ?");
+        $req->bindValue(1, $username, PDO::PARAM_STR);
+        $req->execute();
+        $result = $req->fetch();
         if (!$result) {
             return null;
         }
         return new User($result);
     }
 
-    public function create(string $username, string $email, string $first_name, string $last_name, string $password, $role)
+    public function create(string $username, string $email, string $password, $role)
     {
-        $sql = "INSERT INTO user(username, email, first_name, last_name, password, role) 
-                VALUES(:username, :email, :first_name, :last_name, :password, :role)";
-        $r = $this->db->prepare($sql);
-        $r->execute(
+
+        $req = $this->getBdd()->prepare("INSERT INTO user(username, email, password, role) 
+                VALUES(:username, :email :password, :role)");
+        $req->execute(
             array(
                 ':username' => $username,
                 ':email' => $email,
-                ':first_name' => $first_name,
-                ':last_name' => $last_name,
                 ':password' => $password,
                 ':role' => $role
             )
         );
-        $newUserId = $this->db->lastInsertId();
+        $newUserId = $this->getBdd()->lastInsertId();
         return $newUserId;
     }
 
     public function delete(int $id)
     {
-        $sql = "DELETE FROM user WHERE id=?";
-        $r = $this->db->prepare($sql);
-        $r->execute(array($id));
+
+        $req = $this->getBdd()->prepare("DELETE FROM user WHERE id=?");
+        $req->execute(array($id));
     }
 
-    public function update(int $id, string $username, string $email, string $first_name, string $last_name, string $password, int $role)
+    public function update(int $id, string $username, string $email, string $password, int $roles)
     {
-        $sql = "UPDATE user SET username = :username,
-                                email = :email,
-                                first_name = :first_name,
-                                last_name = :last_name,
-                                password = :password,
-                                role = :role
-                WHERE id = :id";
-        $r = $this->db->prepare($sql);
-        $r->bindValue('username', $username, PDO::PARAM_STR);
-        $r->bindValue('email', $email, PDO::PARAM_STR);
-        $r->bindValue('first_name', $first_name, PDO::PARAM_STR);
-        $r->bindValue('last_name', $last_name, PDO::PARAM_STR);
-        $r->bindValue('password', $password, PDO::PARAM_STR);
-        $r->bindValue('role', $role, PDO::PARAM_INT);
-        $r->bindValue('id', $id, PDO::PARAM_INT);
-        $r->execute();
-        $result = $r->fetch();
+
+        $req = $this->getBdd()->prepare("UPDATE user SET username = :username,email = :email,password = :password, roles = :roles
+                WHERE id = :id");
+        $req->bindValue('username', $username, PDO::PARAM_STR);
+        $req->bindValue('email', $email, PDO::PARAM_STR);
+        $req->bindValue('password', $password, PDO::PARAM_STR);
+        $req->bindValue('role', $roles, PDO::PARAM_INT);
+        $req->bindValue('id', $id, PDO::PARAM_INT);
+        $req->execute();
+        $result = $req->fetch();
         if (!$result) {
             return null;
         }
@@ -111,8 +101,7 @@ class UserManager extends DbManager
      */
     public function disable(int $id)
     {
-        $sql = "UPDATE user SET deleted = :deleted WHERE id = :id";
-        $r = $this->db->prepare($sql);
+        $r = $this->getBdd()->prepare("UPDATE user SET deleted = :deleted WHERE id = :id");
         $r->bindValue('deleted', true, PDO::PARAM_BOOL);
         $r->bindValue('id', $id, PDO::PARAM_INT);
         $r->execute();
@@ -126,8 +115,7 @@ class UserManager extends DbManager
      */
     public function promote(int $id)
     {
-        $sql = "UPDATE user SET role = :role WHERE id = :id";
-        $r = $this->db->prepare($sql);
+        $r = $this->getBdd()->prepare("UPDATE user SET role = :role WHERE id = :id");
         $r->bindValue('role', true, PDO::PARAM_BOOL);
         $r->bindValue('id', $id, PDO::PARAM_INT);
         $r->execute();
@@ -140,11 +128,11 @@ class UserManager extends DbManager
      */
     public function demote(int $id)
     {
-        $sql = "UPDATE user SET role = :role WHERE id = :id";
-        $r = $this->db->prepare($sql);
-        $r->bindValue('role', false, PDO::PARAM_BOOL);
-        $r->bindValue('id', $id, PDO::PARAM_INT);
-        $r->execute();
+
+        $req = $this->getBdd()->prepare("UPDATE user SET role = :role WHERE id = :id");
+        $req->bindValue('role', false, PDO::PARAM_BOOL);
+        $req->bindValue('id', $id, PDO::PARAM_INT);
+        $req->execute();
     }
 //    public function login($email, $password)
 //    {

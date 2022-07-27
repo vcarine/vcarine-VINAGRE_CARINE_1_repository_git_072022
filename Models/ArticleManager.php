@@ -70,6 +70,7 @@ class ArticleManager extends DbManager
      */
     private function createdObjectArticle(array $article): Article
     {
+
         return new Article(
             $article['id'],
             $article['image_link'],
@@ -77,7 +78,7 @@ class ArticleManager extends DbManager
             $article['title'],
             $article['author'],
             $article['slug'],
-            new DateTime($article['createdAt'])
+            new DateTime($article['created_at'])
         );
     }
     /**
@@ -91,17 +92,17 @@ class ArticleManager extends DbManager
         $title = '';
         $author = '';
         $slug = '';
-        $createdAt = '';
+        $created_at = '';
 
 
 
-        $request = $this->getBdd()->prepare('INSERT INTO articles (image_link, content, title, author, slug, createAt ) VALUES (:image_link, :content, :title, :author, :slug, :createAt)');
+        $request = $this->getBdd()->prepare('INSERT INTO articles (image_link, content, title, author, slug, created_at) VALUES (:image_link, :content, :title, :author, :slug, :createdAt)');
         $request->bindParam(':image_link', $imageLink);
         $request->bindParam(':content', $content);
         $request->bindParam(':title', $title);
         $request->bindParam(':author', $author);
         $request->bindParam(':slug', $slug);
-        $request->bindParam(':createdAt', $createdAt);
+        $request->bindParam(':created_at', $created_at);
 
         $request->execute();
 
