@@ -2,6 +2,8 @@
 
 namespace App\models;
 
+
+use App\models\Manager\DbManager;
 use DateTime;
 use Exception;
 use PDO;

@@ -2,15 +2,14 @@
 
 namespace App\controllers\Security;
 
+use App\controllers\MainController;
+use App\controllers\Toolbox;
 use App\models\UserManager;
 
-class SecurityController
-{
-    private UserManager $userManager;
 
-    /**
-     * @param $userManager
-     */
+
+class SecurityController extends MainController
+{
     public function __construct()
     {
         $this->userManager = new UserManager();
@@ -39,8 +38,7 @@ class SecurityController
             }
 
         }
-
-        require "Views/security/login.php";
+        require "Views/Visitor/login.php";
     }
 
     /**
@@ -75,9 +73,25 @@ class SecurityController
             }
 
         }
-
         require "Views/security/register.php";
     }
-
+    public function validation_login($login,$password){
+        if($this->userManager->isCombinaisonValide($login,$password)){
+            if($this->userManager->estCompteActive($login)){
+                Toolbox::addMessageAlerte("Bon retour sur le site ".$login." !", Toolbox::COULEUR_VERTE);
+                $_SESSION['profil'] = [
+                    "login" => $login,
+                ];
+                header("location: ".URL."compte/profil");
+            } else {
+                Toolbox::addMessageAlerte("Le compte ".$login. " n'a pas été activé par mail", Toolbox::COULEUR_ROUGE);
+                //renvoyer le mail de validation
+                header("Location: ".URL."login");
+            }
+        } else {
+            Toolbox::addMessageAlerte("Combinaison Login / Mot de passe non valide", Toolbox::COULEUR_ROUGE);
+            header("Location: ".URL."login");
+        }
+    }
 
 }
