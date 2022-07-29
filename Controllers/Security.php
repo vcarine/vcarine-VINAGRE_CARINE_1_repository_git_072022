@@ -1,7 +1,8 @@
 <?php
 
-class Securite{
-    public static function secureHTML($chaine){
+class Security{
+    public static function secureHTML($chaine): string
+    {
         return htmlentities($chaine);
     }
 }

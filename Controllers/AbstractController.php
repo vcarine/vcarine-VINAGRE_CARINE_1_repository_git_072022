@@ -2,7 +2,7 @@
 
 namespace App\controllers;
 
-abstract class MainController
+abstract class AbstractController
 {
     protected function generatePage($data): void
     {
