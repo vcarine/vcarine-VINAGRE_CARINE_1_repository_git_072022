@@ -13,11 +13,11 @@ define('URL', str_replace("index.php", "", (isset($_SERVER['HTTPS']) ? "https" :
 
 try {
     if (empty($_GET['page'])) {
-        require "Views/Visitor/accueil.view.php";
+        require "Views/accueil.view.php";
     } else {
         $url = explode("/", filter_var($_GET['page']), FILTER_SANITIZE_URL);
         match ($url[0]) {
-            'accueil' => require "Views/Visitor/accueil.view.php",
+            'accueil' => require "Views/accueil.view.php",
             'articles' => getDisplayArticle(),
             'article' => actionArticle($url[1], $url[2]),
 
