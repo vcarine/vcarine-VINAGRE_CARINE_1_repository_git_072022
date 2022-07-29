@@ -1,11 +1,11 @@
 <?php
 namespace App\controllers\User;
+use App\controllers\MainController;
 use App\controllers\Toolbox;
-use App\models\Manager\DbManager;
 use App\models\UserManager;
 
 
-class UserController extends DbManager {
+class UserController extends MainController {
     private $userManager;
 
     public function __construct(){
