@@ -3,7 +3,6 @@
 use App\controllers\ArticlesController;
 use App\controllers\Toolbox;
 use App\controllers\User\UserController;
-use controllers\Visitor\VisitorController;
 
 
 include 'vendor/autoload.php';
@@ -61,7 +60,6 @@ function actionArticle(string $parameter, int $id): void
     }
 }
 
-$visitorController = new VisitorController();
 $userController = new UserController();
 
 try {
@@ -73,15 +71,15 @@ try {
     }
 
     switch($page){
-        case "article" : $visitorController->article();
+        case "article" : $userController->article();
             break;
-        case "login" : $visitorController->login();
+        case "login" : $userController->login();
             break;
         case "validation_login" :
             if(!empty($_POST['login']) && !empty($_POST['password'])){
                 $login = Securite::secureHTML($_POST['login']);
                 $password = Securite::secureHTML($_POST['password']);
-                $visitorController->validation_login($login,$password);
+                $userController->validation_login($login,$password);
             } else {
                 Toolbox::addMessageAlerte("Login ou mot de passe non renseigné", Toolbox::COULEUR_ROUGE);
                 header('Location: '.URL."login");
@@ -89,12 +87,12 @@ try {
             break;
         case "compte" :
             switch($url[1]){
-                case "profil": $visitorController->article();
+                case "profil": $userController->article();
                     break;
             }
             break;
         default : throw new Exception("La page n'existe pas");
     }
 } catch (Exception $e){
-    $visitorController->pageError($e->getMessage());
+    $userController->pageError($e->getMessage());
 }

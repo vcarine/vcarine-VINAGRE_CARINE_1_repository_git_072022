@@ -4,7 +4,7 @@ namespace App\controllers;
 
 abstract class MainController
 {
-    protected function generatePage($data): void
+    protected function genererPage($data)
     {
         extract($data);
         ob_start();
@@ -13,15 +13,15 @@ abstract class MainController
         require_once($template);
     }
 
-    public function pageError($msg): void
+    protected function pageErreur($msg)
     {
         $data_page = [
             "page_description" => "Page permettant de gérer les erreurs",
             "page_title" => "Page d'erreur",
             "msg" => $msg,
             "view" => "./views/erreur.view.php",
-            "template" => "views/template.php"
+            "template" => "views/common/template.php"
         ];
-        $this->generatePage($data_page);
+        $this->genererPage($data_page);
     }
 }

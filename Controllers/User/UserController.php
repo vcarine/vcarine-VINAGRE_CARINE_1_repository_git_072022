@@ -1,11 +1,11 @@
 <?php
 namespace App\controllers\User;
-use App\controllers\MainController;
 use App\controllers\Toolbox;
+use App\models\Manager\DbManager;
 use App\models\UserManager;
 
 
-class UserController extends MainController{
+class UserController extends DbManager {
     private $userManager;
 
     public function __construct(){
@@ -30,8 +30,30 @@ class UserController extends MainController{
             header("Location: ".URL."login");
         }
     }
-    public function pageError($msg): void
-    {
+    public function article(){
+        $users = $this->userManager->getUser();
+
+        $data_page = [
+            "page_description" => "Description de la page d'accueil",
+            "page_title" => "Titre de la page d'accueil",
+            "utilisateurs" =>  $users,
+            "view" => "views/Visitor/accueil.view.php",
+            "template" => "views/template.php"
+        ];
+        $this->generatePage($data_page);
+    }
+
+    public function login(){
+        $data_page = [
+            "page_description" => "Page de connexion",
+            "page_title" => "Page de connexion",
+            "view" => "views/Visitor/login.php",
+            "template" => "views/template.php"
+        ];
+        $this->generatePage($data_page);
+    }
+
+    public function pageError($msg){
         parent::pageError($msg);
     }
 }

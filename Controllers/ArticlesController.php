@@ -3,7 +3,7 @@
 namespace App\controllers;
 
 
-use App\models\ArticleManager;
+use App\models\Manager\ArticleManager;
 use Exception;
 
 class ArticlesController
